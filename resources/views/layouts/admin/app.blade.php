@@ -14,7 +14,6 @@
     <link href="{{ asset('metronic') }}/css/style.bundle.css" rel="stylesheet" type="text/css">
 </head>
 
-
 <body id="kt_app_body" data-kt-app-header-fixed="true" data-kt-app-header-fixed-mobile="true"
     data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-push-toolbar="true"
     data-kt-app-sidebar-push-footer="true" class="app-default" cz-shortcut-listen="true">
@@ -50,12 +49,9 @@
                 @include('layouts.admin.sidebar')
 
                 <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-                    <!--begin::Content wrapper-->
                     <div class="d-flex flex-column flex-column-fluid">
-                        <!--begin::Content-->
                         <div id="kt_app_content" class="app-content flex-column-fluid">
-                            <!--begin::Content container-->
-                            <div id="kt_app_content_container" class="app-container container-xxl">
+                            <div id="kt_app_content_container" class="app-container container-xxxl">
                                 @yield('content')
                             </div>
                         </div>
@@ -73,30 +69,7 @@
     <script src="{{ asset('metronic') }}/plugins/global/plugins.bundle.js"></script>
     <script src="{{ asset('metronic') }}/js/scripts.bundle.js"></script>
 
-    {{-- <!--begin::Vendors Javascript(used for this page only)-->
-    <script src="{{ asset('metronic') }}/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
-    <script src="{{ asset('metronic') }}/plugins/custom/datatables/datatables.bundle.js"></script>
-    <!--end::Vendors Javascript--> --}}
-
-    <!--begin::Custom Javascript(used for this page only)-->
-    <script src="{{ asset('metronic') }}/js/widgets.bundle.js"></script>
-    <script src="{{ asset('metronic') }}/js/custom/widgets.js"></script>
-    <script src="{{ asset('metronic') }}/js/custom/apps/chat/chat.js"></script>
-    <script src="{{ asset('metronic') }}/js/custom/utilities/modals/bidding.js"></script>
-    <script src="{{ asset('metronic') }}/js/custom/utilities/modals/users-search.js"></script>
-    <!--end::Custom Javascript-->
-    <!--end::Javascript-->
+    @yield('script')
 </body>
 
 </html>

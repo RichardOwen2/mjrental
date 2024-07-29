@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -20,4 +23,24 @@ Route::get('/', [HomeController::class, 'index']);
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'index')->name('login');
     Route::post('/login', 'login');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::prefix('order')->group(function () {
+        Route::controller(OrderController::class)->group(function () {
+            Route::get('/', 'index')->name('order.index');
+        });
+    });
+
+    Route::prefix('product')->group(function () {
+        Route::controller(ProductController::class)->group(function () {
+            Route::get('/', 'index')->name('product.index');
+        });
+    });
+
+    Route::prefix('type')->group(function () {
+        Route::controller(TypeController::class)->group(function () {
+            Route::get('/', 'index')->name('type.index');
+        });
+    });
 });

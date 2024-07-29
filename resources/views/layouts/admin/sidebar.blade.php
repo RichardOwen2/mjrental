@@ -6,16 +6,83 @@
         data-kt-scroll="true" data-kt-scroll-height="auto"
         data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer"
         data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" style="height: 264px;">
+
         <div id="kt_aside_menu"
             class="menu menu-rounded menu-column menu-title-gray-600 menu-state-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-semibold fs-6"
             data-kt-menu="true">
+
+            <a class="menu-item py-2 here" href="{{ route('order.index') }}">
+                <span class="menu-link menu-center">
+                    <span class="menu-icon me-0">
+                        <i class="ki-outline ki-document fs-1"></i>
+                    </span>
+                </span>
+            </a>
+
             <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
-                class="menu-item here show py-2">
-                <span class="menu-link menu-center"><span class="menu-icon me-0"><i
-                            class="ki-outline ki-home-2 fs-1"></i></span></span>
+                class="menu-item py-2">
+                <span class="menu-link menu-center">
+                    <span class="menu-icon me-0">
+                        <i class="ki-outline ki-add-folder fs-1"></i>
+                    </span>
+                </span>
                 <div class="menu-sub menu-sub-dropdown px-2 py-4 w-250px mh-75 overflow-auto">
                     <div class="menu-item">
-                        <div class="menu-content "><span class="menu-section fs-5 fw-bolder ps-1 py-1">Home</span></div>
+                        <div class="menu-content">
+                            <span class="menu-section fs-5 fw-bolder ps-1 py-1">Database</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <a class="menu-link" href="{{ route('type.index') }}">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Tipe</span>
+                        </a>
+                    </div>
+
+                    <div class="menu-item">
+                        <a class="menu-link" href="{{ route('product.index') }}">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Produk</span>
+                        </a>
+                    </div>
+
+                    {{-- <div class="menu-item">
+                        <a class="menu-link" href="/metronic8/demo56/index.html">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Tipe</span>
+                        </a>
+                    </div>
+
+                    <div class="menu-item">
+                        <a class="menu-link" href="/metronic8/demo56/index.html">
+                            <span class="menu-bullet">
+                                <span class="bullet bullet-dot"></span>
+                            </span>
+                            <span class="menu-title">Tipe</span>
+                        </a>
+                    </div> --}}
+                </div>
+            </div>
+
+            {{-- <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-start"
+                class="menu-item py-2 here">
+                <span class="menu-link menu-center">
+                    <span class="menu-icon me-0">
+                        <i class="ki-outline ki-home-2 fs-1"></i>
+                    </span>
+                </span>
+                <div class="menu-sub menu-sub-dropdown px-2 py-4 w-250px mh-75 overflow-auto">
+                    <div class="menu-item">
+                        <div class="menu-content">
+                            <span class="menu-section fs-5 fw-bolder ps-1 py-1">Home</span>
+                        </div>
                     </div>
 
                     <div class="menu-item">
@@ -36,7 +103,8 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+
         </div>
     </div>
 
