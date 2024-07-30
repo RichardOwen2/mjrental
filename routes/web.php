@@ -35,12 +35,22 @@ Route::middleware('auth')->group(function () {
     Route::prefix('product')->group(function () {
         Route::controller(ProductController::class)->group(function () {
             Route::get('/', 'index')->name('product.index');
+            Route::post('/store', 'store')->name('product.store');
+            Route::post('/update', 'update')->name('product.update');
+            Route::post('/delete', 'delete')->name('product.delete');
+
+            Route::get('/get/table', 'table')->name('product.table');
         });
     });
 
     Route::prefix('type')->group(function () {
         Route::controller(TypeController::class)->group(function () {
             Route::get('/', 'index')->name('type.index');
+            Route::post('/store', 'store')->name('type.store');
+            Route::post('/update', 'update')->name('type.update');
+            Route::post('/delete', 'delete')->name('type.delete');
+
+            Route::get('/get/table', 'table')->name('type.table');
         });
     });
 });

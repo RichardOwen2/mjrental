@@ -69,6 +69,10 @@
     <script src="{{ asset('metronic') }}/plugins/global/plugins.bundle.js"></script>
     <script src="{{ asset('metronic') }}/js/scripts.bundle.js"></script>
 
+    <script src="{{ asset('metronic') }}/plugins/global/plugins.bundle.js"></script>
+    <script src="{{ asset('metronic') }}/js/scripts.bundle.js"></script>
+    <script src="{{ asset('metronic') }}/plugins/custom/datatables/datatables.bundle.js"></script>
+
     @yield('script')
 </body>
 
