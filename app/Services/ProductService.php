@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Helpers;
 use App\Models\Product;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Yajra\DataTables\Facades\DataTables;
@@ -21,19 +22,31 @@ class ProductService
         return Product::findOrFail($id);
     }
 
-    public static function store($name)
+    public static function store($type_id, $name, $price_day, $price_week, $price_month, $number, $description)
     {
         return Product::create([
+            'type_id' => $type_id,
             'name' => $name,
+            'price_day' => $price_day,
+            'price_week' => $price_week,
+            'price_month' => $price_month,
+            'number' => $number,
+            'description' => $description,
         ]);
     }
 
-    public static function update($id, $name)
+    public static function update($id, $type_id, $name, $price_day, $price_week, $price_month, $number, $description)
     {
         $product = Product::findOrFail($id);
 
         $product->update([
+            'type_id' => $type_id,
             'name' => $name,
+            'price_day' => $price_day,
+            'price_week' => $price_week,
+            'price_month' => $price_month,
+            'number' => $number,
+            'description' => $description,
         ]);
 
         return $product;
@@ -56,9 +69,12 @@ class ProductService
 
         return DataTables::of($query)
             ->addIndexColumn()
-            // ->addColumn('product_count', function ($query) {
-            //     return $query->products()->count() . " Produk";
-            // })
+            ->addColumn('type_name', function ($query) {
+                return $query->type->name;
+            })
+            ->addColumn('price', function ($query) {
+                return "Rp " . Helpers::numberFormat($query->price_day) . " / Rp " . Helpers::numberFormat($query->price_week) . " / Rp " . Helpers::numberFormat($query->price_month);
+            })
             ->addColumn('action', function ($query) {
                 return view('pages.admin.product.menu', compact('query'));
             })

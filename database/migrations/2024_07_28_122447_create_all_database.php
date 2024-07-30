@@ -22,7 +22,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('type_id')->constrained('types');
             $table->string('name');
-            $table->string('price');
+            $table->string('price_day');
+            $table->string('price_week');
+            $table->string('price_month');
             $table->string('number');
             $table->text('description');
             $table->timestamps();
