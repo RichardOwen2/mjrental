@@ -7,9 +7,9 @@
 
 @section('content')
     <div class="card card-flush h-md-100">
-        <div class="card-header pt-7">
+        <div class="card-header">
             <h3 class="card-title align-items-start flex-column">
-                <span class="card-label fw-bold text-gray-800">List Produk</span>
+                <span class="card-label fw-bold text-gray-800">List Order</span>
             </h3>
 
             <div class="card-toolbar">
@@ -20,6 +20,30 @@
         </div>
 
         <div class="card-body pt-6">
+            <ul class="nav nav-pills mb-4" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="fw-semibold btn-sm btn btn-light-success btn-color-success rounded active position-relative"
+                        data-bs-toggle="tab" onclick="changeQuery('filter', 'Open')" id="filter_open"
+                        href="#filter_open_content" aria-selected="true" role="tab">
+                        Open
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="fw-semibold btn-sm btn btn-light-danger btn-color-danger rounded position-relative"
+                        data-bs-toggle="tab" onclick="changeQuery('filter', 'Close')" id="filter_close"
+                        href="#filter_close_content" aria-selected="false" tabindex="-1" role="tab">
+                        Close
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="fw-semibold btn-sm btn btn-light-primary btn-color-primary rounded position-relative"
+                        data-bs-toggle="tab" onclick="changeQuery('filter', 'All')" id="filter_all"
+                        href="#filter_all_content" aria-selected="true" role="tab">
+                        All
+                    </a>
+                </li>
+            </ul>
+
             <div class="table-responsive" style="overflow: hidden">
                 <table class="table table-row-dashed align-middle gs-0 gy-3 my-0" id="table_order">
                     <thead>
@@ -47,6 +71,12 @@
 @section('script')
     <script>
         let orderTable;
+        let status = 'Open';
+
+        const changeQuery = (type, value) => {
+            status = value;
+            orderTable.ajax.reload();
+        }
 
         const onDeleteorder = (id) => {
             Swal.fire({

@@ -6,8 +6,8 @@
             </div>
 
             <a href="index.html">
-                <img alt="Logo" src="{{ asset('metronic') }}/media/logos/demo44.svg" class="h-25px theme-light-show" />
-                <img alt="Logo" src="{{ asset('metronic') }}/media/logos/demo44-dark.svg" class="h-25px theme-dark-show" />
+                <img alt="Logo" src="{{ asset('logo/logo_black.png') }}" class="h-35px theme-light-show" />
+                <img alt="Logo" src="{{ asset('logo/logo_white.png') }}" class="h-35px theme-dark-show" />
             </a>
         </div>
 

@@ -29,6 +29,11 @@ Route::middleware('auth')->group(function () {
     Route::prefix('order')->group(function () {
         Route::controller(OrderController::class)->group(function () {
             Route::get('/', 'index')->name('order.index');
+            Route::post('/store', 'store')->name('order.store');
+            Route::post('/update', 'update')->name('order.update');
+            Route::post('/delete', 'delete')->name('order.delete');
+
+            Route::get('/get/table', 'table')->name('order.table');
         });
     });
 
