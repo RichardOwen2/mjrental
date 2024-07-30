@@ -1,14 +1,21 @@
 @extends('layouts.admin.app')
 
+@section('modal')
+    @include('pages.admin.type.modal.add')
+    @include('pages.admin.type.modal.edit')
+@endsection
+
 @section('content')
     <div class="card card-flush h-md-100">
         <div class="card-header pt-7">
             <h3 class="card-title align-items-start flex-column">
-                <span class="card-label fw-bold text-gray-800">List Tipe</span>
+                <span class="card-label fw-bold text-gray-800">Tipe Produk</span>
             </h3>
 
             <div class="card-toolbar">
-                <a href="/metronic8/demo31/apps/ecommerce/catalog/add-product.html" class="btn btn-sm btn-light">History</a>
+                <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_type">
+                    Tambah Tipe
+                </a>
             </div>
         </div>
 
@@ -37,8 +44,58 @@
     <script>
         let typeTable;
 
+        const onDeleteType = (id) => {
+            Swal.fire({
+                title: 'Delete!',
+                text: `Apakah Anda yakin ingin menghapus?`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: 'rgb(221, 107, 85)',
+                cancelButtonColor: 'gray',
+                confirmButtonText: 'Yes, Delete!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "{{ route('type.delete') }}",
+                        type: 'POST',
+                        data: {
+                            id
+                        },
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(data) {
+                            Swal.fire({
+                                title: 'Success',
+                                text: `${data.message}`,
+                                icon: 'success',
+                                confirmButtonColor: 'green',
+                            });
+
+                            typeTable?.draw();
+                        },
+                        error: function(xhr, status, error) {
+                            const data = xhr.responseJSON;
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: data.message,
+                            });
+                        }
+                    });
+                }
+            });
+        };
+
+        const onEditType = (id, name) => {
+            $('#modal_edit_type [name="id"]').val(id);
+            $('#modal_edit_type [name="name"]').val(name);
+            $('#modal_edit_type').modal('show');
+        }
+
         $(document).ready(function() {
-            causesTable = $('#table_type').DataTable({
+            typeTable = $('#table_type').DataTable({
                 processing: true,
                 serverSide: true,
                 retrieve: true,

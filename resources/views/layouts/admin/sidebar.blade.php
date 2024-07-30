@@ -12,12 +12,6 @@
             data-kt-scroll-offset="20px">
 
             <div class="menu-item">
-                <div class="menu-content">
-                    <span class="menu-section fs-5 fw-bolder ps-1 py-1">Home</span>
-                </div>
-            </div>
-
-            <div class="menu-item">
                 <a class="menu-link {{ request()->routeIs('order.*') ? "active" : "" }}" href="{{ route('order.index') }}">
                     <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
