@@ -68,6 +68,21 @@
                         <input type="text" class="form-control form-control-lg form-control-solid" name="description"
                             placeholder="" value="">
                     </div>
+
+                    <div class="fv-row mb-3">
+                        <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                            <span>Image</span>
+                        </label>
+                        <input type="file" class="form-control form-control-lg form-control-solid" name="image[]"
+                            multiple placeholder="" value="">
+                    </div>
+
+                    <div class="fv-row mb-3">
+                        <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                            <span>Preview</span>
+                        </label>
+                        <div id="image-preview-container" class="d-flex flex-wrap"></div>
+                    </div>
                 </div>
 
                 <div class="text-center mt-9">
@@ -84,6 +99,29 @@
 
 <script>
     $(document).ready(function() {
+        $('#form_add_product [name="image[]"]').on('change', function() {
+            const files = event.target.files;
+            const imagePreviewContainer = $('#form_add_product #image-preview-container');
+
+            // Clear previous images
+            imagePreviewContainer.empty();
+
+            for (let i = 0; i < files.length; i++) {
+                let file = files[i];
+                let reader = new FileReader();
+
+                reader.onload = function(e) {
+                    let img = $('<img>').attr('src', e.target.result).css({
+                        'max-width': '200px',
+                        'margin': '10px'
+                    });
+                    imagePreviewContainer.append(img);
+                }
+
+                reader.readAsDataURL(file);
+            }
+        });
+
         $('#form_add_product').on('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);

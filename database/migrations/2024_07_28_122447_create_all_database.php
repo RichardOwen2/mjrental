@@ -48,6 +48,13 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('order_attachments', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('order_id')->constrained('orders');
+            $table->text('attachment');
+            $table->timestamps();
+        });
+
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('title');

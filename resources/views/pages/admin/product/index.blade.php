@@ -3,6 +3,7 @@
 @section('modal')
     @include('pages.admin.product.modal.add')
     @include('pages.admin.product.modal.edit')
+    @include('pages.admin.product.modal.image')
 @endsection
 
 @section('content')
@@ -101,6 +102,35 @@
             $('#form_edit_product [name="price_week"]').val(price_week);
             $('#form_edit_product [name="price_month"]').val(price_month);
             $('#form_edit_product [name="description"]').val(description);
+        };
+
+        const onViewImage = (id) => {
+            $('#modal_image_product [name="id"]').val(id);
+            $('#modal_image_product').modal('show');
+            $.ajax({
+                url: "{{ route('product.image', '') }}" + "/" + id,
+                type: 'GET',
+                success: function(data) {
+                    const imageContainer = $('#modal_image_product #image-container');
+                    imageContainer.empty();
+
+                    data.data.forEach((image) => {
+                        const img = $('<img>').attr('src', '{{ asset("storage/product/image/") }}/' + image.image).css({
+                            'max-width': '200px',
+                            'margin': '10px'
+                        });
+                        imageContainer.append(img);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    const data = xhr.responseJSON;
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: data.message,
+                    });
+                }
+            });
         };
 
         $(document).ready(function() {

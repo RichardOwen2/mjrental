@@ -15,4 +15,7 @@
     )">
         <span class="fa fa-pen"></span>
     </button>
+    <button class="btn btn-sm btn-icon btn-primary w-30px h-30px" onclick="onViewImage('{{ $query->id }}')">
+        <span class="fa fa-image"></span>
+    </button>
 </div>
