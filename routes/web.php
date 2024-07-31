@@ -26,17 +26,6 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::prefix('order')->group(function () {
-        Route::controller(OrderController::class)->group(function () {
-            Route::get('/', 'index')->name('order.index');
-            Route::post('/store', 'store')->name('order.store');
-            Route::post('/update', 'update')->name('order.update');
-            Route::post('/delete', 'delete')->name('order.delete');
-
-            Route::get('/get/table', 'table')->name('order.table');
-        });
-    });
-
     Route::prefix('product')->group(function () {
         Route::controller(ProductController::class)->group(function () {
             Route::get('/', 'index')->name('product.index');
@@ -58,6 +47,19 @@ Route::middleware('auth')->group(function () {
             Route::post('/delete', 'delete')->name('type.delete');
 
             Route::get('/get/table', 'table')->name('type.table');
+        });
+    });
+
+    Route::prefix('order')->group(function () {
+        Route::controller(OrderController::class)->group(function () {
+            Route::get('/', 'index')->name('order.index');
+            Route::post('/store', 'store')->name('order.store');
+            Route::post('/update', 'update')->name('order.update');
+            Route::post('/update/status', 'updateStatus')->name('order.update.status');
+            Route::post('/delete', 'delete')->name('order.delete');
+            Route::get('/attachment/{id}', 'getAttachment')->name('order.attachment');
+
+            Route::get('/get/table', 'table')->name('order.table');
         });
     });
 });

@@ -95,7 +95,7 @@
         const onEditProduct = (id, type_id, name, number, price_day, price_week, price_month, description) => {
             $('#modal_edit_product').modal('show');
             $('#form_edit_product [name="id"]').val(id);
-            $('#form_edit_product [name="type_id"]').val(type_id);
+            $('#form_edit_product [name="type_id"]').val(type_id).trigger('change');
             $('#form_edit_product [name="name"]').val(name);
             $('#form_edit_product [name="number"]').val(number);
             $('#form_edit_product [name="price_day"]').val(price_day);
@@ -119,7 +119,9 @@
                             'max-width': '200px',
                             'margin': '10px'
                         });
-                        imageContainer.append(img);
+
+                        const a = $('<a>').attr('href', '{{ asset("storage/product/image/") }}/' + image.image).attr('target', '_blank').append(img);
+                        imageContainer.append(a);
                     });
                 },
                 error: function(xhr, status, error) {

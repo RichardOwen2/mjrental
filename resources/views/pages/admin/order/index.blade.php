@@ -3,6 +3,7 @@
 @section('modal')
     @include('pages.admin.order.modal.add')
     @include('pages.admin.order.modal.edit')
+    @include('pages.admin.order.modal.attachment')
 @endsection
 
 @section('content')
@@ -53,8 +54,8 @@
                             <th>PLAT</th>
                             <th>DATE IN</th>
                             <th>DATE OUT</th>
-                            <th>DESKRIPSI</th>
                             <th>STATUS</th>
+                            <th>DESKRIPSI</th>
                             <th class="text-center">ACTION</th>
                         </tr>
                     </thead>
@@ -75,10 +76,10 @@
 
         const changeQuery = (type, value) => {
             status = value;
-            orderTable.ajax.reload();
+            orderTable?.ajax.reload();
         }
 
-        const onDeleteorder = (id) => {
+        const onDeleteOrder = (id) => {
             Swal.fire({
                 title: 'Delete!',
                 text: `Apakah Anda yakin ingin menghapus?`,
@@ -122,16 +123,90 @@
             });
         };
 
-        const onEditorder = (id, type_id, name, number, price_day, price_week, price_month, description) => {
+        const onUpdateStatus = (id, status) => {
+            Swal.fire({
+                title: status == 'Open' ? 'Open?' : 'Close?',
+                text: `Apakah Anda yakin ingin ${status == 'Open' ? 'membuka' : 'menutup'} order ini?`,
+                icon: 'success',
+                showCancelButton: true,
+                confirmButtonColor: 'green',
+                cancelButtonColor: 'gray',
+                confirmButtonText: 'Yes, Update!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "{{ route('order.update.status') }}",
+                        type: 'POST',
+                        data: {
+                            id,
+                            status
+                        },
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(data) {
+                            Swal.fire({
+                                title: 'Success',
+                                text: `${data.message}`,
+                                icon: 'success',
+                                confirmButtonColor: 'green',
+                            });
+
+                            orderTable?.draw();
+                        },
+                        error: function(xhr, status, error) {
+                            const data = xhr.responseJSON;
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: data.message,
+                            });
+                        }
+                    });
+                }
+            });
+        };
+
+        const onViewAttachment = (id) => {
+            $('#modal_attachment_order').modal('show');
+
+            $.ajax({
+                url: "{{ route('order.attachment', '') }}" + "/" + id,
+                type: 'GET',
+                data: {
+                    id
+                },
+                success: function(data) {
+                    const imageContainer = $('#modal_attachment_order #attachment_list');
+                    imageContainer.empty();
+
+                    data.data.forEach((image) => {
+                        const img = $('<img>').attr('src', '{{ asset("storage/order/attachment/") }}/' + image.attachment).css({
+                            'max-width': '300px',
+                            'margin': '10px'
+                        });
+
+                        const a = $('<a>').attr('href', '{{ asset("storage/order/attachment/") }}/' + image.attachment).attr('target', '_blank').append(img);
+                        imageContainer.append(a);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    const data = xhr.responseJSON;
+                    toastr.error(data.message, 'Opps!');
+                }
+            });
+        }
+
+        const onEditOrder = (id, product_id, customer_name, date_in, date_out, description, status) => {
             $('#modal_edit_order').modal('show');
             $('#form_edit_order [name="id"]').val(id);
-            $('#form_edit_order [name="type_id"]').val(type_id);
-            $('#form_edit_order [name="name"]').val(name);
-            $('#form_edit_order [name="number"]').val(number);
-            $('#form_edit_order [name="price_day"]').val(price_day);
-            $('#form_edit_order [name="price_week"]').val(price_week);
-            $('#form_edit_order [name="price_month"]').val(price_month);
+            $('#form_edit_order [name="product_id"]').val(product_id).trigger('change');
+            $('#form_edit_order [name="customer_name"]').val(customer_name);
+            $('#form_edit_order [name="date_in"]').val(date_in);
+            $('#form_edit_order [name="date_out"]').val(date_out);
             $('#form_edit_order [name="description"]').val(description);
+            $('#form_edit_order [name="status"]').val(status).trigger('change');
         };
 
         $(document).ready(function() {
@@ -143,6 +218,9 @@
                 responsive: false,
                 ajax: {
                     url: "{{ route('order.table') }}",
+                    data: function(d) {
+                        d.status = status;
+                    }
                 },
                 language: {
                     "lengthMenu": "Show _MENU_",
@@ -167,16 +245,19 @@
                         searchable: false
                     },
                     {
-                        data: 'name'
+                        data: 'type_name'
                     },
                     {
-                        data: 'type_name',
+                        data: 'product_number',
                     },
                     {
-                        data: 'number',
+                        data: 'date_in',
                     },
                     {
-                        data: 'price',
+                        data: 'date_out',
+                    },
+                    {
+                        data: 'status',
                     },
                     {
                         data: 'description',
@@ -189,7 +270,7 @@
                     "regex": true
                 },
                 columnDefs: [{
-                    targets: [0, 6],
+                    targets: [0, 7],
                     className: 'text-center',
                 }, ],
             });

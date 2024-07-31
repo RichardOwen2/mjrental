@@ -28,7 +28,7 @@
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span class="required">Nama Customer</span>
                         </label>
-                        <input type="text" class="form-control form-control-lg form-control-solid" name="number"
+                        <input type="text" class="form-control form-control-lg form-control-solid" name="customer_name"
                             required placeholder="" value="">
                     </div>
 
@@ -60,7 +60,7 @@
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span class="required">Status</span>
                         </label>
-                        <select name="product_id" class="form-select form-select-solid" data-control="select2"
+                        <select name="status" class="form-select form-select-solid" data-control="select2"
                             data-hide-search="true" data-placeholder="">
                             <option selected value="Open">Open</option>
                             <option value="Close">Close</option>
@@ -72,7 +72,7 @@
                             <span>Attachments</span>
                         </label>
                         <input type="file" class="form-control form-control-lg form-control-solid"
-                            name="attachment[]" multiple placeholder="" value="">
+                            name="attachments[]" multiple placeholder="" value="">
                     </div>
                 </div>
 

@@ -9,11 +9,16 @@ use App\Models\OrderAttachment;
  */
 class OrderAttachmentService
 {
+    public static function getAttachment($order_id)
+    {
+        return OrderAttachment::where('order_id', $order_id)->get();
+    }
+
     public static function store($order_id, $attachments)
     {
         foreach ($attachments as $attachment) {
             $filename = time() . '_' . $attachment->getClientOriginalName();
-            $attachment->storeAs('public/product/attachment', $filename);
+            $attachment->storeAs('public/order/attachment', $filename);
 
             OrderAttachment::create([
                 'order_id' => $order_id,

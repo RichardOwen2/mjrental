@@ -38,12 +38,12 @@ class OrderService
         $order = Order::findOrFail($id);
 
         $order->update([
-            'product_id' => $product_id,
-            'customer_name' => $customer_name,
-            'date_in' => $date_in,
-            'date_out' => $date_out,
-            'description' => $description,
-            'status' => $status,
+            'product_id' => $product_id ?? $order->product_id,
+            'customer_name' => $customer_name ?? $order->customer_name,
+            'date_in' => $date_in ?? $order->date_in,
+            'date_out' => $date_out ?? $order->date_out,
+            'description' => $description ?? $order->description,
+            'status' => $status ?? $order->status,
         ]);
 
         return $order;
@@ -60,19 +60,33 @@ class OrderService
         $order->delete();
     }
 
-    public static function getDataTable()
+    public static function getDataTable($status = null)
     {
-        $query = Order::query();
+        $query = Order::with([
+            'product',
+            'product.type',
+        ]);
+
+        if ($status !== "All") {
+            $query->where('status', $status);
+        }
 
         return DataTables::of($query)
             ->addIndexColumn()
-            // ->addColumn('product_count', function ($query) {
-            //     return $query->products()->count() . " Produk";
-            // })
-            // ->addColumn('action', function ($query) {
-            //     return view('pages.admin.order.menu', compact('query'));
-            // })
-            ->rawColumns(['action'])
+            ->addColumn('type_name', function ($query) {
+                return $query->product->type->name;
+            })
+            ->addColumn('product_number', function ($query) {
+                return $query->product->number;
+            })
+            ->addColumn('status', function ($query) {
+                $status = $query->status;
+                return view('pages.admin.order.status', compact('status'));
+            })
+            ->addColumn('action', function ($query) {
+                return view('pages.admin.order.menu', compact('query'));
+            })
+            ->rawColumns(['action', 'status'])
             ->make(true);
     }
 }
