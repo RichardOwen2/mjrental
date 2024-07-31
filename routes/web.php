@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')->name('guest.home');
+});
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'index')->name('login');
