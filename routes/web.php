@@ -23,6 +23,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'index')->name('login');
     Route::post('/login', 'login');
+    Route::get('/logout', 'logout')->name('logout');
 });
 
 Route::middleware('auth')->group(function () {
