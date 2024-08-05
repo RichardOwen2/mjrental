@@ -22,10 +22,14 @@
 <body>
     @include('layouts.guest.header')
 
-    @yield('content')
+    <div class="pt-16 bg-gray-50">
+        @yield('content')
+    </div>
 
     @include('layouts.guest.footer')
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+    @yield('scripts')
 </body>
 
 </html>

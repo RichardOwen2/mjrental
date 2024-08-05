@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +22,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(HomeController::class)->group(function () {
-    Route::get('/', 'index')->name('guest.home');
+    Route::get('/', 'index')->name('home.index');
+});
+
+Route::prefix('catalog')->group(function () {
+    Route::controller(CatalogController::class)->group(function () {
+        Route::get('/', 'index')->name('catalog.index');
+    });
+});
+
+Route::prefix('contact')->group(function () {
+    Route::controller(ContactController::class)->group(function () {
+        Route::get('/', 'index')->name('contact.index');
+    });
+});
+
+Route::prefix('about')->group(function () {
+    Route::controller(AboutController::class)->group(function () {
+        Route::get('/', 'index')->name('about.index');
+    });
 });
 
 Route::controller(AuthController::class)->group(function () {
