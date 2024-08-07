@@ -26,7 +26,7 @@
 <body>
     @include('layouts.guest.header')
 
-    <div class="pt-16 bg-gray-50 max-w-screen">
+    <div class="pt-16 max-w-screen bg-gray-100">
         @yield('content')
     </div>
 
