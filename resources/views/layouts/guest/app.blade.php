@@ -34,7 +34,7 @@
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
 
     @yield('scripts')
-
+    @include('components.floating')
     <script>
         AOS.init();
     </script>
