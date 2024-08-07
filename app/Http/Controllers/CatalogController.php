@@ -10,4 +10,9 @@ class CatalogController extends Controller
     {
         return view('pages.guest.catalog.index');
     }
+
+    public function detail($id)
+    {
+        return view('pages.guest.catalog.detail.index', compact('id'));
+    }
 }

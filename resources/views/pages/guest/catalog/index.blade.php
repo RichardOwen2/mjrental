@@ -6,9 +6,10 @@
             MJRENTAL CATALOG
         </h1>
 
-        <div class="grid grid-cols-4 gap-4">
+        <div class="flex flex-wrap gap-2 items-center justify-center">
             @for ($i = 0; $i < 20; $i++)
                 @include('components.product', [
+                    'id' => 1,
                     'image' => asset('media/honda.webp'),
                     'title' => 'Honda Vario 150',
                     'price_day' => '50.000',

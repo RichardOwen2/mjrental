@@ -28,6 +28,7 @@ Route::controller(HomeController::class)->group(function () {
 Route::prefix('catalog')->group(function () {
     Route::controller(CatalogController::class)->group(function () {
         Route::get('/', 'index')->name('catalog.index');
+        Route::get('/detail/{id}', 'detail')->name('catalog.detail');
     });
 });
 

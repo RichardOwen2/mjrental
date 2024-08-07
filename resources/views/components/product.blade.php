@@ -1,4 +1,4 @@
-<div class="w-[300px] bg-white border border-gray-200 rounded-lg shadow">
+<div class="w-[290px] bg-white border border-gray-200 rounded-lg shadow" data-aos="fade-up" data-aos-duration="700">
     <img class="rounded-t-lg" src="{{ $image }}" alt="" />
     <div class="p-5 mt-2">
         <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900">
@@ -62,8 +62,8 @@
         </div>
 
         <div class="flex justify-center mt-5">
-            <a href="#"
-                class="flex justify-center items-center w-full py-2 text-sm font-medium text-white bg-black rounded-lg hover:bg-gray-800">
+            <a href="{{ route('catalog.detail', ["id" => $id]) }}"
+                class="flex justify-center items-center w-full py-2 text-sm font-medium text-white rounded-lg bg-blue-800 hover:bg-blue-900">
                 <div class="flex justify-center items-center font-semibold">
                     Detail
                     <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"

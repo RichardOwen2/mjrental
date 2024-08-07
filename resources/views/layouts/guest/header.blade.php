@@ -7,7 +7,7 @@
             </a>
             <div class="flex items-center lg:order-2">
                 <a href="https://wa.me/6281367364350" target="_blank"
-                    class="text-white font-semibold bg-green-600 hover:bg-green-700 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0">
+                    class="text-white font-semibold bg-blue-800 hover:bg-blue-900 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 focus:outline-none">
                     <i class="fa-brands fa-whatsapp me-1"></i>
                     Contact Us
                 </a>
@@ -33,32 +33,32 @@
                     <li>
                         <a href="{{ route('home.index') }}"
                             class="{{ request()->routeIs('home.index')
-                                ? 'block py-2 pl-3 pr-4 text-white bg-black rounded lg:bg-transparent lg:text-black lg:p-0'
-                                : 'block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0' }}">
+                                ? 'block py-2 pl-3 pr-4 font-bold text-blue-700 rounded lg:bg-transparent lg:p-0'
+                                : 'block py-2 pl-3 pr-4 font-bold text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0' }}">
                             Home
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('catalog.index') }}"
                             class="{{ request()->routeIs('catalog.index')
-                                ? 'block py-2 pl-3 pr-4 text-white bg-black rounded lg:bg-transparent lg:text-black lg:p-0'
-                                : 'block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0' }}">
+                                ? 'block py-2 pl-3 pr-4 font-bold text-blue-700 rounded lg:bg-transparent lg:p-0'
+                                : 'block py-2 pl-3 pr-4 font-bold text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0' }}">
                             Catalog
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('contact.index') }}"
                             class="{{ request()->routeIs('contact.index')
-                                ? 'block py-2 pl-3 pr-4 text-white bg-black rounded lg:bg-transparent lg:text-black lg:p-0'
-                                : 'block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0' }}">
+                                ? 'block py-2 pl-3 pr-4 font-bold text-blue-700 rounded lg:bg-transparent lg:p-0'
+                                : 'block py-2 pl-3 pr-4 font-bold text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0' }}">
                             Contact
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('about.index') }}"
                             class="{{ request()->routeIs('about.index')
-                                ? 'block py-2 pl-3 pr-4 text-white bg-black rounded lg:bg-transparent lg:text-black lg:p-0'
-                                : 'block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0' }}">
+                                ? 'block py-2 pl-3 pr-4 font-bold text-blue-700 rounded lg:bg-transparent lg:p-0'
+                                : 'block py-2 pl-3 pr-4 font-bold text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0' }}">
                             About
                         </a>
                     </li>

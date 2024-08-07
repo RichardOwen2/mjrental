@@ -3,7 +3,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-<section class="bg-white pt-12">
+<section class="bg-white pt-12" data-aos="fade-right" data-aos-duration="700">
     <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
         <!-- Row -->
         <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
@@ -16,25 +16,26 @@
                 </p>
                 <hr class="border-t py-3 border-t-gray-200 w-full">
                 <h3 class="mt-2">
-                    <i class="fa-solid fa-map-marker-alt me-2"></i>
+                    <i class="fa-solid fa-map-marker-alt me-2 text-blue-500"></i>
                     Jl. Pantai Mengening, Cemagi, Kec. Mengwi, Kabupaten Badung, Bali 80351
                 </h3>
                 <h3 class="mt-2">
-                    <i class="fa-solid fa-phone me-2"></i>
+                    <i class="fa-solid fa-phone me-2 text-blue-500"></i>
                     +62 813-6736-4350
                 </h3>
                 <h3 class="mt-2">
-                    <i class="fa-solid fa-envelope me-2"></i>
+                    <i class="fa-solid fa-envelope me-2 text-blue-500"></i>
+                    lorem@gmail.com
                 </h3>
             </div>
-            <div id="map" style="height: 100%"></div>
+            <div id="map" style="height: 100%; min-height: 400px"></div>
         </div>
     </div>
 </section>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        var map = L.map('map').setView([-8.627569, 115.1145472], 15);
+        var map = L.map('map').setView([-8.627569, 115.1145472], 13);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
