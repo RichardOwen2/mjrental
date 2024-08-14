@@ -13,7 +13,7 @@
 
                     <div class="fv-row mb-3">
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
-                            <span>Ganti gambar?</span>
+                            <span>Tambah gambar?</span>
                         </label>
                         <input type="file" class="form-control form-control-lg form-control-solid" name="image[]"
                             multiple placeholder="" value="">
@@ -24,6 +24,13 @@
                             <span>Preview</span>
                         </label>
                         <div id="image-container" class="d-flex flex-wrap"></div>
+                    </div>
+
+                    <div class="fv-row mb-3">
+                        <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                            <span>Gambar lainnya</span>
+                        </label>
+                        <div id="existing-container" class="d-flex flex-wrap"></div>
                     </div>
                 </div>
 
@@ -57,6 +64,7 @@
                         'max-width': '200px',
                         'margin': '10px'
                     });
+
                     imagePreviewContainer.append(img);
                 }
 
@@ -72,7 +80,7 @@
                 '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...'
             );
             $.ajax({
-                url: "{{ route('product.update.image') }}",
+                url: "{{ route('product.store.image') }}",
                 type: 'POST',
                 data: formData,
                 contentType: false,

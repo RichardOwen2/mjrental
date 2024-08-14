@@ -71,7 +71,22 @@
 
                     <div class="fv-row mb-3">
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
-                            <span>Image</span>
+                            <span class="required">Foto Cover</span>
+                        </label>
+                        <input type="file" class="form-control form-control-lg form-control-solid" name="cover"
+                            placeholder="" value="">
+                    </div>
+
+                    <div class="fv-row mb-3">
+                        <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                            <span>Preview</span>
+                        </label>
+                        <div id="cover-preview-container" class="d-flex flex-wrap"></div>
+                    </div>
+
+                    <div class="fv-row mb-3">
+                        <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                            <span>Foto Lainnya</span>
                         </label>
                         <input type="file" class="form-control form-control-lg form-control-solid" name="image[]"
                             multiple placeholder="" value="">
@@ -115,11 +130,33 @@
                         'max-width': '200px',
                         'margin': '10px'
                     });
+
                     imagePreviewContainer.append(img);
                 }
 
                 reader.readAsDataURL(file);
             }
+        });
+
+        $('#form_add_product [name="cover"]').on('change', function() {
+            const file = event.target.files[0];
+            const imagePreviewContainer = $('#form_add_product #cover-preview-container');
+
+            // Clear previous images
+            imagePreviewContainer.empty();
+
+            let reader = new FileReader();
+
+            reader.onload = function(e) {
+                let img = $('<img>').attr('src', e.target.result).css({
+                    'max-width': '200px',
+                    'margin': '10px'
+                });
+
+                imagePreviewContainer.append(img);
+            }
+
+            reader.readAsDataURL(file);
         });
 
         $('#form_add_product').on('submit', function(e) {

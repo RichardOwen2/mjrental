@@ -27,6 +27,8 @@ return new class extends Migration
             $table->string('price_month');
             $table->string('number');
             $table->text('description');
+            $table->text('cover');
+            // $table->boolean('archive')->default(true);
             $table->timestamps();
         });
 

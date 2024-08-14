@@ -21,6 +21,11 @@ class OrderService
         return Order::findOrFail($id);
     }
 
+    public static function getByProductId($product_id)
+    {
+        return Order::where('product_id', $product_id)->get();
+    }
+
     public static function store($product_id, $customer_name, $date_in, $date_out, $description, $status)
     {
         return Order::create([

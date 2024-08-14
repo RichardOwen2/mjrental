@@ -62,7 +62,7 @@
                     Rent a motorbike with us and enjoy your vacation in Bali.
                 </p>
                 <a href="https://wa.me/6281367364350" target="_blank"
-                    class="text-white font-semibold bg-blue-800 hover:bg-blue-900 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0">
+                    class="text-white font-semibold bg-gradient-to-r from-cyan-500 to-blue-700 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0">
                     <i class="fa-brands fa-whatsapp me-1"></i>
                     Contact Us
                 </a>

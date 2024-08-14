@@ -11,8 +11,6 @@ class ProductImageService
 {
     public static function store($product_id, $images)
     {
-        ProductImage::where('product_id', $product_id)->delete();
-
         foreach ($images as $image) {
             $filename = time() . '_' . $image->getClientOriginalName();
             $image->storeAs('public/product/image', $filename);
@@ -22,6 +20,11 @@ class ProductImageService
                 'image' => $filename,
             ]);
         }
+    }
+
+    public static function delete($id)
+    {
+        ProductImage::findOrFail($id)->delete();
     }
 
     public static function getImages($product_id)

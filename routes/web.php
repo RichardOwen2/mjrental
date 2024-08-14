@@ -56,9 +56,10 @@ Route::middleware('auth')->group(function () {
             Route::get('/', 'index')->name('product.index');
             Route::post('/store', 'store')->name('product.store');
             Route::post('/update', 'update')->name('product.update');
-            Route::post('/update/image', 'updateImage')->name('product.update.image');
+            Route::post('/store/image', 'storeImage')->name('product.store.image');
             Route::post('/delete', 'delete')->name('product.delete');
             Route::get('/image/{id}', 'getImage')->name('product.image');
+            Route::post('/delete/image', 'deleteImage')->name('product.delete.image');
 
             Route::get('/get/table', 'table')->name('product.table');
         });

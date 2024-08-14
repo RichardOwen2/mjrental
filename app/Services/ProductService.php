@@ -22,8 +22,11 @@ class ProductService
         return Product::findOrFail($id);
     }
 
-    public static function store($type_id, $name, $price_day, $price_week, $price_month, $number, $description)
+    public static function store($type_id, $name, $price_day, $price_week, $price_month, $number, $description, $cover)
     {
+        $filename = time() . '_' . $cover->getClientOriginalName();
+        $cover->storeAs('public/product/image', $filename);
+
         return Product::create([
             'type_id' => $type_id,
             'name' => $name,
@@ -32,12 +35,20 @@ class ProductService
             'price_month' => $price_month,
             'number' => $number,
             'description' => $description,
+            'cover' => $filename,
         ]);
     }
 
-    public static function update($id, $type_id, $name, $price_day, $price_week, $price_month, $number, $description)
+    public static function update($id, $type_id, $name, $price_day, $price_week, $price_month, $number, $description, $cover)
     {
         $product = Product::findOrFail($id);
+
+        $filename = $product->cover;
+
+        if ($cover) {
+            $filename = time() . '_' . $cover->getClientOriginalName();
+            $cover->storeAs('public/product/image', $filename);
+        }
 
         $product->update([
             'type_id' => $type_id,

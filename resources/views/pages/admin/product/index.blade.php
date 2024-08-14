@@ -104,24 +104,49 @@
             $('#form_edit_product [name="description"]').val(description);
         };
 
-        const onViewImage = (id) => {
-            $('#modal_image_product [name="id"]').val(id);
-            $('#modal_image_product').modal('show');
+        const getImages = (id) => {
             $.ajax({
                 url: "{{ route('product.image', '') }}" + "/" + id,
                 type: 'GET',
                 success: function(data) {
-                    const imageContainer = $('#modal_image_product #image-container');
+                    const imageContainer = $('#modal_image_product #existing-container');
                     imageContainer.empty();
 
                     data.data.forEach((image) => {
-                        const img = $('<img>').attr('src', '{{ asset("storage/product/image/") }}/' + image.image).css({
-                            'max-width': '200px',
-                            'margin': '10px'
-                        });
+                        const img = $('<img>')
+                            .attr('src', '{{ asset('storage/product/image/') }}/' + image.image)
+                            .css({
+                                'max-width': '200px',
+                                'margin': '10px',
+                                'position': 'relative'
+                            });
 
-                        const a = $('<a>').attr('href', '{{ asset("storage/product/image/") }}/' + image.image).attr('target', '_blank').append(img);
-                        imageContainer.append(a);
+                        const a = $('<a>')
+                            .attr('href', '{{ asset('storage/product/image/') }}/' + image.image)
+                            .attr('target', '_blank')
+                            .append(img);
+
+                        const remove = $('<button>')
+                            .addClass('btn btn-sm btn-danger w-fit-content')
+                            .attr('type', 'button')
+                            .css({
+                                'position': 'absolute',
+                                'top': '10px',
+                                'right': '10px'
+                            })
+                            .click(() => {
+                                onDeleteImage(image.product_id, image.id);
+                            })
+                            .append($('<div>').addClass('bi bi-trash'));
+
+                        const container = $('<div>')
+                            .css({
+                                'position': 'relative',
+                                'display': 'inline-block'
+                            })
+                            .append(a, remove);
+
+                        imageContainer.append(container);
                     });
                 },
                 error: function(xhr, status, error) {
@@ -133,6 +158,46 @@
                     });
                 }
             });
+        };
+
+        const onDeleteImage = (product_id, image_id) => {
+            Swal.fire({
+                title: 'Delete!',
+                text: `Apakah Anda yakin ingin menghapus?`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: 'rgb(221, 107, 85)',
+                cancelButtonColor: 'gray',
+                confirmButtonText: 'Yes, Delete!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "{{ route('product.delete.image') }}",
+                        type: 'POST',
+                        data: {
+                            id: image_id
+                        },
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(data) {
+                            toastr.success(data.message, 'Selamat 🚀 !');
+                            getImages(product_id);
+                        },
+                        error: function(xhr, status, error) {
+                            const data = xhr.responseJSON;
+                            toastr.error(data.message, 'Opps!');
+                        }
+                    });
+                }
+            });
+        };
+
+        const onViewImage = (id) => {
+            $('#modal_image_product [name="id"]').val(id);
+            $('#modal_image_product').modal('show');
+            getImages(id);
         };
 
         $(document).ready(function() {

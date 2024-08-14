@@ -10,8 +10,7 @@
     <!-- Meta SEO -->
     <meta name="title" content="MJ RENTAL">
     <meta name="description"
-        content="Get started with a free and open-source landing page built with Tailwind CSS and the Flowbite component library.">
-    <meta name="robots" content="index, follow">
+        content="MJ RENTAL is a company engaged in the field of vehicle rental services, especially motorbikes. We provide the best service for you to enjoy your vacation in Bali.">
 
     <link rel="icon" href="{{ asset('favicon.ico') }}">
 
