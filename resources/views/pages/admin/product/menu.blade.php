@@ -11,7 +11,7 @@
         '{{ $query->price_day }}',
         '{{ $query->price_week }}',
         '{{ $query->price_month }}',
-        '{{ $query->description }}'
+        `{{ $query->description }}`
     )">
         <span class="fa fa-pen"></span>
     </button>

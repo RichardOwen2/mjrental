@@ -30,7 +30,7 @@
                             <th>TIPE</th>
                             <th>PLAT</th>
                             <th>HARGA</th>
-                            <th>DESKRIPSI</th>
+                            {{-- <th>DESKRIPSI</th> --}}
                             <th class="text-center">ACTION</th>
                         </tr>
                     </thead>
@@ -45,6 +45,29 @@
 @endsection
 
 @section('script')
+    <script src="{{ asset('metronic/plugins/custom/tinymce/tinymce.bundle.js') }}"></script>
+
+    <script>
+        var options = {
+            selector: '[data-control="tinymce"]',
+            statusbar: false,
+            height: "280",
+            init_instance_callback: function(editor) {
+                editor.on('change', function() {
+                    console.log(editor.getContent());
+                    $(editor.id).val(editor.getContent());
+                });
+            }
+        };
+
+        if (typeof KTThemeMode !== 'undefined' && KTThemeMode.getMode() === "dark") {
+            options["skin"] = "oxide-dark";
+            options["content_css"] = "dark";
+        }
+
+        tinymce.init(options);
+    </script>
+
     <script>
         let productTable;
 
@@ -101,7 +124,8 @@
             $('#form_edit_product [name="price_day"]').val(price_day);
             $('#form_edit_product [name="price_week"]').val(price_week);
             $('#form_edit_product [name="price_month"]').val(price_month);
-            $('#form_edit_product [name="description"]').val(description);
+            // $('#form_edit_product [name="description"]').val(description);
+            tinymce.get('edit_description').setContent(description);
         };
 
         const getImages = (id) => {
@@ -244,9 +268,9 @@
                     {
                         data: 'price',
                     },
-                    {
-                        data: 'description',
-                    },
+                    // {
+                    //     data: 'description',
+                    // },
                     {
                         data: 'action'
                     }
@@ -255,7 +279,7 @@
                     "regex": true
                 },
                 columnDefs: [{
-                    targets: [0, 6],
+                    targets: [0, 5],
                     className: 'text-center',
                 }, ],
             });

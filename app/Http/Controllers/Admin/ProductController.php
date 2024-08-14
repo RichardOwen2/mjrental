@@ -84,7 +84,7 @@ class ProductController extends Controller
             'price_week' => 'required|numeric',
             'number' => 'required',
             'description' => 'required|string',
-            'cover' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'cover' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ], [
             'type_id.required' => 'Tipe produk wajib diisi',
             'type_id.exists' => 'Tipe produk tidak ditemukan',

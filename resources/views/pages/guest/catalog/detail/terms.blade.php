@@ -1,124 +1,166 @@
-<div>
-    <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-12 lg:px-6 ">
-        <h2 class="mb-6 text-3xl font-extrabold tracking-tight text-center text-blue-800 lg:mb-8 lg:text-3xl">
-            Terms & Conditions
-        </h2>
-        <div class="max-w-screen-md mx-auto">
-            <div id="accordion-flush" data-accordion="collapse" data-active-classes="text-blue-900 font-bold"
-                data-inactive-classes="text-blue-700 font-bold">
-                <h3 id="accordion-flush-heading-1">
-                    <button type="button"
-                        class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-900 border-b border-gray-200"
-                        data-accordion-target="#accordion-flush-body-1" aria-expanded="true"
-                        aria-controls="accordion-flush-body-1">
-                        <span>Can I use Landwind in open-source projects?</span>
-                        <svg data-accordion-icon="" class="w-6 h-6 rotate-180 shrink-0" fill="currentColor"
-                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </h3>
-                <div id="accordion-flush-body-1" class="" aria-labelledby="accordion-flush-heading-1">
-                    <div class="py-5 border-b border-gray-200">
-                        <p class="mb-2 text-gray-500">Landwind is an open-source library of
-                            interactive components built on top of Tailwind CSS including buttons, dropdowns,
-                            modals, navbars, and more.</p>
-                        <p class="text-gray-500">Check out this guide to learn how to <a href="#"
-                                class="text-blue-600 hover:underline">get
-                                started</a> and start developing websites even faster with components on top of
-                            Tailwind CSS.</p>
-                    </div>
+<div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-12 lg:px-6 ">
+    <h2 class="mb-6 text-3xl font-extrabold tracking-tight text-center text-blue-900 lg:mb-8 lg:text-3xl">
+        Terms and Conditions
+    </h2>
+    <div class="max-w-screen-md mx-auto">
+        <div id="accordion-flush" data-accordion="collapse" data-active-classes="text-blue-900 font-bold"
+            data-inactive-classes="text-blue-700 font-bold">
+            <h3 id="accordion-flush-heading-1">
+                <button type="button"
+                    class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-900 border-b border-gray-200"
+                    data-accordion-target="#accordion-flush-body-1" aria-expanded="true"
+                    aria-controls="accordion-flush-body-1">
+                    <span>Driver Condition</span>
+                    <svg data-accordion-icon="" class="w-6 h-6 rotate-180 shrink-0" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </h3>
+            <div id="accordion-flush-body-1" class="" aria-labelledby="accordion-flush-heading-1">
+                <div class="py-5 border-b border-gray-200">
+                    <li class="font-semibold mb-1">Driver Age</li>
+                    <p class="mb-2 text-gray-500">
+                        All drivers must be at least 18 years old to ensure adequate driving qualifications.
+                    </p>
+                    <li class="font-semibold mb-1">Driving Safety</li>
+                    <p class="mb-2 text-gray-500">
+                        Wearing a helmet is mandatory for all drivers and passengers when riding a motorcycle.
+                        Safety is our top priority.
+                    </p>
+                    <li class="font-semibold mb-1">Helmet Replacement Service</li>
+                    <p class="mb-2 text-gray-500">
+                        If your helmet is lost or damaged, contact our Customer Service immediately. We will be
+                        happy to deliver a replacement helmet. Always ride with a helmet for your safety.
+                    </p>
                 </div>
-                <h3 id="accordion-flush-heading-2">
-                    <button type="button"
-                        class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200"
-                        data-accordion-target="#accordion-flush-body-2" aria-expanded="false"
-                        aria-controls="accordion-flush-body-2">
-                        <span>Is there a Figma file available?</span>
-                        <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </h3>
-                <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
-                    <div class="py-5 border-b border-gray-200">
-                        <p class="mb-2 text-gray-500">Landwind is first conceptualized and
-                            designed using the Figma software so everything you see in the library has a design
-                            equivalent in our Figma file.</p>
-                        <p class="text-gray-500">Check out the <a href="#"
-                                class="text-blue-600 hover:underline">Figma design
-                                system</a> based on the utility classes from Tailwind CSS and components from
-                            Landwind.</p>
-                    </div>
+            </div>
+            <h3 id="accordion-flush-heading-2">
+                <button type="button"
+                    class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200"
+                    data-accordion-target="#accordion-flush-body-2" aria-expanded="false"
+                    aria-controls="accordion-flush-body-2">
+                    <span>Scooters & Motorcycles</span>
+                    <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </h3>
+            <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+                <div class="py-5 border-b border-gray-200">
+                    <p class="mb-2 text-gray-500">
+                        Vehicles must be returned on time. Late returns may result in additional rental fees. Please
+                        adhere to the return time or notify us 48 hours in advance if you wish to extend the rental.
+                    </p>
+                    <p class="mb-2 text-gray-500">
+                        Report to Customer Service if you notice any damage or if the vehicle is unfit to drive. We
+                        will repair or replace it promptly.
+                    </p>
+                    <p class="mb-2 text-gray-500">
+                        Our vehicles are only for use on public roads and are not to be used off-road or on the
+                        beach.
+                    </p>
+                    <p class="mb-2 text-gray-500">
+                        If the type of motorcycle you reserved is unavailable due to unforeseen circumstances, we
+                        will provide a similar or upgraded motorcycle at no extra charge.
+                    </p>
                 </div>
-                <h3 id="accordion-flush-heading-3">
-                    <button type="button"
-                        class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200"
-                        data-accordion-target="#accordion-flush-body-3" aria-expanded="false"
-                        aria-controls="accordion-flush-body-3">
-                        <span>What are the differences between Landwind and Tailwind UI?</span>
-                        <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </h3>
-                <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
-                    <div class="py-5 border-b border-gray-200">
-                        <p class="mb-2 text-gray-500">The main difference is that the core
-                            components from Landwind are open source under the MIT license, whereas Tailwind UI is a
-                            paid product. Another difference is that Landwind relies on smaller and standalone
-                            components, whereas Tailwind UI offers sections of pages.</p>
-                        <p class="mb-2 text-gray-500">However, we actually recommend using both
-                            Landwind, Landwind Pro, and even Tailwind UI as there is no technical reason stopping
-                            you from using the best of two worlds.</p>
-                        <p class="mb-2 text-gray-500">Learn more about these technologies:</p>
-                        <ul class="pl-5 text-gray-500 list-disc">
-                            <li><a href="#" class="text-blue-600 hover:underline">Landwind Pro</a>
-                            </li>
-                            <li><a href="#" class="text-blue-600 hover:underline">Tailwind UI</a>
-                            </li>
-                        </ul>
-                    </div>
+            </div>
+            <h3 id="accordion-flush-heading-3">
+                <button type="button"
+                    class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200"
+                    data-accordion-target="#accordion-flush-body-3" aria-expanded="false"
+                    aria-controls="accordion-flush-body-3">
+                    <span>Delivery & Pickup</span>
+                    <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </h3>
+            <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+                <div class="py-5 border-b border-gray-200">
+                    <p class="mb-2 text-gray-500">
+                        If you offer delivery or pickup services at your rental location, delivery and pickup times
+                        are indicative. We strive to be on time to deliver the motorcycle to you.
+                    </p>
+                    <p class="mb-2 text-gray-500">
+                        If you decide to leave the vehicle at your accommodation for pickup without your presence,
+                        take 5 photos of the vehicle: front, left side, right side, rear, and fuel gauge. If the
+                        vehicle has under-seat storage, take a photo to show that the helmet and other accessories
+                        have been included. Always leave the keys with the receptionist/on-duty manager and inform
+                        us of the villa or hotel staff who received the keys. Leaving the vehicle in an unattended
+                        area is not permitted.
+                    </p>
                 </div>
-                <h3 id="accordion-flush-heading-4">
-                    <button type="button"
-                        class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200"
-                        data-accordion-target="#accordion-flush-body-4" aria-expanded="false"
-                        aria-controls="accordion-flush-body-4">
-                        <span>What about browser support?</span>
-                        <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </h3>
-                <div id="accordion-flush-body-4" class="hidden" aria-labelledby="accordion-flush-heading-4">
-                    <div class="py-5 border-b border-gray-200">
-                        <p class="mb-2 text-gray-500">The main difference is that the core
-                            components from Landwind are open source under the MIT license, whereas Tailwind UI is a
-                            paid product. Another difference is that Landwind relies on smaller and standalone
-                            components, whereas Tailwind UI offers sections of pages.</p>
-                        <p class="mb-2 text-gray-500">However, we actually recommend using both
-                            Landwind, Landwind Pro, and even Tailwind UI as there is no technical reason stopping
-                            you from using the best of two worlds.</p>
-                        <p class="mb-2 text-gray-500">Learn more about these technologies:</p>
-                        <ul class="pl-5 text-gray-500 list-disc">
-                            <li><a href="#" class="text-blue-600 hover:underline">Landwind Pro</a>
-                            </li>
-                            <li><a href="#" class="text-blue-600 hover:underline">Tailwind UI</a>
-                            </li>
-                        </ul>
-                    </div>
+            </div>
+            <h3 id="accordion-flush-heading-4">
+                <button type="button"
+                    class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200"
+                    data-accordion-target="#accordion-flush-body-4" aria-expanded="false"
+                    aria-controls="accordion-flush-body-4">
+                    <span>Payment</span>
+                    <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </h3>
+            <div id="accordion-flush-body-4" class="hidden" aria-labelledby="accordion-flush-heading-4">
+                <div class="py-5 border-b border-gray-200">
+                    <p class="mb-2 text-gray-500">
+                        The renter must pay all rental fees in advance upon receiving the unit. Payment can be made
+                        by cash, card, and transfer
+                    </p>
+                    <p class="mb-2 text-gray-500">
+                        We accept several other currencies such as Euro, Pound Sterling, Singapore Dollar,
+                        Australian Dollar, New Zealand Dollar, Indonesian Rupiah, Malaysian Ringgit, and Russian
+                        Ruble. The prices we quote in other currencies are converted from USD daily.
+                    </p>
+                </div>
+            </div>
+            <h3 id="accordion-flush-heading-5">
+                <button type="button"
+                    class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200"
+                    data-accordion-target="#accordion-flush-body-5" aria-expanded="false"
+                    aria-controls="accordion-flush-body-5">
+                    <span>Damage & Charges</span>
+                    <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </h3>
+            <div id="accordion-flush-body-5" class="hidden" aria-labelledby="accordion-flush-heading-5">
+                <div class="py-5 border-b border-gray-200">
+                    <p class="mb-2 text-gray-500">
+                        Customer Service must be notified immediately of any accident. We will promptly come with a
+                        replacement motorcycle and assist you with a police report if needed. Please note that our
+                        insurance policy does not cover if the driver is found to be intoxicated, underage, or does
+                        not have a valid driver’s license.
+                    </p>
+                    <p class="mb-2 text-gray-500">
+                        In the event of an accident, full responsibility for the damage lies with the renter until
+                        an estimate for repairs is received.
+                    </p>
+                    <p class="mb-2 text-gray-500">
+                        If after an accident, our motorcycle is declared unfit to drive and the fault lies with the
+                        renter, the rental contract will be terminated immediately without a refund. The renter will
+                        be notified by email or phone regarding repair costs, and any refund, if applicable, will be
+                        made promptly. Please note that opting for our motorcycle insurance will nullify this
+                        condition.
+                    </p>
                 </div>
             </div>
         </div>

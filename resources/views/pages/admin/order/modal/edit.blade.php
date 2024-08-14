@@ -1,5 +1,5 @@
 <div class="modal fade" id="modal_edit_order" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered mw-650px">
+    <div class="modal-dialog modal-dialog-centered mw-950px">
         <div class="modal-content">
             <div class="modal-header flex-stack align-items-center">
                 <div class="fs-2 fw-bold">Edit Order</div>
@@ -38,7 +38,7 @@
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span>Date In</span>
                         </label>
-                        <input type="date" class="form-control form-control-lg form-control-solid" name="date_in"
+                        <input type="datetime-local" class="form-control form-control-lg form-control-solid" name="date_in"
                             placeholder="" value="">
                     </div>
 
@@ -46,7 +46,7 @@
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span>Date Out</span>
                         </label>
-                        <input type="date" class="form-control form-control-lg form-control-solid" name="date_out"
+                        <input type="datetime-local" class="form-control form-control-lg form-control-solid" name="date_out"
                             placeholder="" value="">
                     </div>
 

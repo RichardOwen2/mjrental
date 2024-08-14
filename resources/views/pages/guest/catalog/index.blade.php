@@ -9,12 +9,12 @@
         <div class="flex flex-wrap gap-2 items-center justify-center">
             @foreach ($products as $product)
                 @include('components.product', [
-                    'id' => 1,
+                    'id' => $product->id,
                     'image' => asset('storage/product/image/' . $product->cover),
                     'title' => $product->name,
-                    'price_day' => $product->price_day,
-                    'price_week' => $product->price_week,
-                    'price_month' => $product->price_month,
+                    'price_day' => \App\Helpers::numberFormat($product->price_day),
+                    'price_week' => \App\Helpers::numberFormat($product->price_week),
+                    'price_month' => \App\Helpers::numberFormat($product->price_month),
                 ])
             @endforeach
         </div>

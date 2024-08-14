@@ -1,5 +1,5 @@
 <div class="modal fade" id="modal_add_product" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered mw-650px">
+    <div class="modal-dialog modal-dialog-centered mw-950px">
         <div class="modal-content">
             <div class="modal-header flex-stack align-items-center">
                 <div class="fs-2 fw-bold">Tambah Produk</div>
@@ -65,8 +65,8 @@
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span>Deskripsi</span>
                         </label>
-                        <input type="text" class="form-control form-control-lg form-control-solid" name="description"
-                            placeholder="" value="">
+                        <textarea type="text" class="form-control form-control-lg form-control-solid" name="description" data-control="tinymce"
+                            placeholder="" value=""></textarea>
                     </div>
 
                     <div class="fv-row mb-3">
@@ -74,7 +74,7 @@
                             <span class="required">Foto Cover</span>
                         </label>
                         <input type="file" class="form-control form-control-lg form-control-solid" name="cover"
-                            placeholder="" value="">
+                            placeholder="" value="" required>
                     </div>
 
                     <div class="fv-row mb-3">

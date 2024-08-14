@@ -4,6 +4,7 @@
     @include('pages.admin.order.modal.add')
     @include('pages.admin.order.modal.edit')
     @include('pages.admin.order.modal.attachment')
+    @include('pages.admin.order.modal.export')
 @endsection
 
 @section('content')
@@ -14,6 +15,10 @@
             </h3>
 
             <div class="card-toolbar">
+                <a href="#" class="btn btn-sm btn-success me-2" data-bs-toggle="modal"
+                    data-bs-target="#modal_export_order">
+                    Export
+                </a>
                 <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_order">
                     Tambah Order
                 </a>
@@ -26,14 +31,14 @@
                     <a class="fw-semibold btn-sm btn btn-light-success btn-color-success rounded active position-relative"
                         data-bs-toggle="tab" onclick="changeQuery('filter', 'Open')" id="filter_open"
                         href="#filter_open_content" aria-selected="true" role="tab">
-                        Open
+                        Rented
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="fw-semibold btn-sm btn btn-light-danger btn-color-danger rounded position-relative"
                         data-bs-toggle="tab" onclick="changeQuery('filter', 'Close')" id="filter_close"
                         href="#filter_close_content" aria-selected="false" tabindex="-1" role="tab">
-                        Close
+                        Finished
                     </a>
                 </li>
                 <li class="nav-item">
@@ -50,6 +55,7 @@
                     <thead>
                         <tr class="fs-7 fw-bold text-gray-500 border-bottom-0">
                             <th class="w-50px text-center">NO</th>
+                            <th>PRODUK</th>
                             <th>TIPE</th>
                             <th>PLAT</th>
                             <th>DATE IN</th>
@@ -182,12 +188,16 @@
                     imageContainer.empty();
 
                     data.data.forEach((image) => {
-                        const img = $('<img>').attr('src', '{{ asset("storage/order/attachment/") }}/' + image.attachment).css({
+                        const img = $('<img>').attr('src',
+                            '{{ asset('storage/order/attachment/') }}/' + image.attachment)
+                    .css({
                             'max-width': '300px',
                             'margin': '10px'
                         });
 
-                        const a = $('<a>').attr('href', '{{ asset("storage/order/attachment/") }}/' + image.attachment).attr('target', '_blank').append(img);
+                        const a = $('<a>').attr('href',
+                                '{{ asset('storage/order/attachment/') }}/' + image.attachment)
+                            .attr('target', '_blank').append(img);
                         imageContainer.append(a);
                     });
                 },
@@ -245,6 +255,9 @@
                         searchable: false
                     },
                     {
+                        data: 'name'
+                    },
+                    {
                         data: 'type_name'
                     },
                     {
@@ -270,7 +283,7 @@
                     "regex": true
                 },
                 columnDefs: [{
-                    targets: [0, 7],
+                    targets: [0, 8],
                     className: 'text-center',
                 }, ],
             });

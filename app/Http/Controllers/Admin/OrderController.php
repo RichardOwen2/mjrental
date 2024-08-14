@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Services\OrderAttachmentService;
 use App\Services\OrderService;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -131,6 +132,27 @@ class OrderController extends Controller
             'status' => 'success',
             'message' => 'Order berhasil dihapus'
         ]);
+    }
+
+    public function export(Request $request)
+    {
+        if (!$request->has('date')) {
+            abort(400, 'Tanggal tidak ditemukan');
+        }
+
+        $range_date = collect(explode('-', $request->date))->map(function ($item, $key) {
+            $date = Carbon::parse($item);
+            if ($key === 0) {
+                return $date->startOfDay()->toDateTimeString();
+            } else {
+                return $date->endOfDay()->toDateTimeString();
+            }
+        })->toArray();
+
+        return OrderService::export(
+            $range_date[0],
+            $range_date[1]
+        );
     }
 
     public function table(Request $request)

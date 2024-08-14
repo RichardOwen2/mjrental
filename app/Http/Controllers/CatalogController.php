@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\ProductImageService;
 use App\Services\ProductService;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,11 @@ class CatalogController extends Controller
 
     public function detail($id)
     {
-        return view('pages.guest.catalog.detail.index', compact('id'));
+        $product = ProductService::getProductById($id);
+        $pictures = ProductImageService::getImages($id);
+
+        return view('pages.guest.catalog.detail.index', compact([
+            'product', 'pictures'
+        ]));
     }
 }

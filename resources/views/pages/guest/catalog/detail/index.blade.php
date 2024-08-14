@@ -5,15 +5,26 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
             <div>
-                @include('pages.guest.catalog.detail.picture')
+                @include('pages.guest.catalog.detail.picture', [
+                    'images' => [
+                        $product->cover,
+                        ...$pictures->pluck('image')->toArray(),
+                    ],
+                ])
+            </div>
+
+            <div>
+                @include('pages.guest.catalog.detail.description')
                 @include('pages.guest.catalog.detail.information')
             </div>
 
-            <div class="col-span-2">
-                @include('pages.guest.catalog.detail.description')
+            <div>
+                @include('pages.guest.catalog.detail.order')
             </div>
         </div>
 
-        @include('pages.guest.catalog.detail.terms')
+        <div>
+            @include('pages.guest.catalog.detail.terms')
+        </div>
     </div>
 @endsection

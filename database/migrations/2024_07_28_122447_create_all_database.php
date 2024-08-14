@@ -43,8 +43,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained('products');
             $table->string('customer_name');
-            $table->date('date_in')->nullable();
-            $table->date('date_out')->nullable();
+            $table->timestamp('date_in')->nullable();
+            $table->timestamp('date_out')->nullable();
             $table->string('description')->nullable();
             $table->enum('status', Constants::ORDER_STATUS)->default(Constants::ORDER_STATUS['Open']);
             $table->timestamps();

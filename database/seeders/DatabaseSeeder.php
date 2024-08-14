@@ -22,12 +22,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         collect([
-            "ADV PUTIH",
-            "ADV HITAM",
-            "N-MAX HITAM",
-            "N-MAX PUTIH",
-            "N-MAX MERAH",
-            "N-MAX HIJAU",
+            "YAMAHA",
+            "HONDA",
+            "SUZUKI",
+            "KAWASAKI",
         ])->each(function ($type) {
             Type::create([
                 "name" => $type,

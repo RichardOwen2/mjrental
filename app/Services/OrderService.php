@@ -2,7 +2,10 @@
 
 namespace App\Services;
 
+use App\Exports\OrderExport;
 use App\Models\Order;
+use Carbon\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -65,6 +68,21 @@ class OrderService
         $order->delete();
     }
 
+    public static function export($dateStart, $dateEnd)
+    {
+        $datas = Order::with([
+            'product',
+            'product.type',
+        ])->whereBetween('created_at', [$dateStart, $dateEnd])->get();
+
+        $date = Carbon::parse($dateStart)->translatedFormat('l, d F Y') . ' - ' . Carbon::parse($dateEnd)->translatedFormat('l, d F Y');
+
+        return Excel::download(
+            new OrderExport($date, $datas),
+            'order.xlsx'
+        );
+    }
+
     public static function getDataTable($status = null)
     {
         $query = Order::with([
@@ -78,6 +96,9 @@ class OrderService
 
         return DataTables::of($query)
             ->addIndexColumn()
+            ->addColumn('name', function ($query) {
+                return $query->product->name;
+            })
             ->addColumn('type_name', function ($query) {
                 return $query->product->type->name;
             })
@@ -90,6 +111,20 @@ class OrderService
             })
             ->addColumn('action', function ($query) {
                 return view('pages.admin.order.menu', compact('query'));
+            })
+            ->addColumn('date_in', function ($query) {
+                if (!$query->date_in) {
+                    return '-';
+                }
+
+                return Carbon::parse($query->date_in)->translatedFormat('l, d F Y H:i');
+            })
+            ->addColumn('date_out', function ($query) {
+                if (!$query->date_out) {
+                    return '-';
+                }
+
+                return Carbon::parse($query->date_out)->translatedFormat('l, d F Y H:i');
             })
             ->rawColumns(['action', 'status'])
             ->make(true);

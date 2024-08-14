@@ -84,6 +84,7 @@ Route::middleware('auth')->group(function () {
             Route::post('/update/status', 'updateStatus')->name('order.update.status');
             Route::post('/delete', 'delete')->name('order.delete');
             Route::get('/attachment/{id}', 'getAttachment')->name('order.attachment');
+            Route::get('/export', 'export')->name('order.export');
 
             Route::get('/get/table', 'table')->name('order.table');
         });

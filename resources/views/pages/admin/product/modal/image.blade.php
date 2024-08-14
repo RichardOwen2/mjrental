@@ -1,5 +1,5 @@
 <div class="modal fade" id="modal_image_product" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered mw-650px">
+    <div class="modal-dialog modal-dialog-centered mw-950px">
         <div class="modal-content">
             <div class="modal-header flex-stack align-items-center">
                 <div class="fs-2 fw-bold">Gambar Produk</div>
@@ -95,6 +95,7 @@
                     $('#modal_image_product').modal('hide');
 
                     $('#form_image_product').trigger('reset');
+                    $('#form_image_product #image-container').empty();
                     productTable?.draw();
                 },
                 error: function(xhr, status, error) {

@@ -1,5 +1,5 @@
 <div class="modal fade" id="modal_add_order" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered mw-650px">
+    <div class="modal-dialog modal-dialog-centered mw-950px">
         <div class="modal-content">
             <div class="modal-header flex-stack align-items-center">
                 <div class="fs-2 fw-bold">Tambah Order</div>
@@ -18,7 +18,7 @@
                             <option selected hidden disabled>Pilih Dulu</option>
                             @foreach ($products as $product)
                                 <option value="{{ $product->id }}">
-                                    {{ $product->type->name }} - {{ $product->number }}
+                                    {{ $product->name }} ({{ $product->number }}) - {{ $product->type->name }}
                                 </option>
                             @endforeach
                         </select>
@@ -36,7 +36,7 @@
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span>Date In</span>
                         </label>
-                        <input type="date" class="form-control form-control-lg form-control-solid" name="date_in"
+                        <input type="datetime-local" class="form-control form-control-lg form-control-solid" name="date_in"
                             placeholder="" value="">
                     </div>
 
@@ -44,7 +44,7 @@
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span>Date Out</span>
                         </label>
-                        <input type="date" class="form-control form-control-lg form-control-solid" name="date_out"
+                        <input type="datetime-local" class="form-control form-control-lg form-control-solid" name="date_out"
                             placeholder="" value="">
                     </div>
 
@@ -62,8 +62,8 @@
                         </label>
                         <select name="status" class="form-select form-select-solid" data-control="select2"
                             data-hide-search="true" data-placeholder="">
-                            <option selected value="Open">Open</option>
-                            <option value="Close">Close</option>
+                            <option selected value="Open">Rented</option>
+                            <option value="Close">Finished</option>
                         </select>
                     </div>
 

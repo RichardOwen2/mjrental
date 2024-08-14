@@ -2,11 +2,11 @@
     <!-- Carousel wrapper -->
     <div class="relative overflow-hidden rounded-2xl aspect-square">
         <!-- Item 1 -->
-        @for ($i = 0; $i < 20; $i++)
+        @foreach ($images as $image)
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                <img src="{{ asset('media/honda.webp') }}" class="h-full w-full" alt="">
+                <img src="{{ asset('storage/product/image/' . $image) }}" class="h-full w-full" alt="">
             </div>
-        @endfor
+        @endforeach
     </div>
     <button type="button"
         class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
