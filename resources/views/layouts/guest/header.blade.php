@@ -47,6 +47,14 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ route('terms.index') }}"
+                            class="{{ request()->routeIs('terms.index')
+                                ? 'block py-2 pl-3 pr-4 font-bold text-blue-700 rounded lg:bg-transparent lg:p-0'
+                                : 'block py-2 pl-3 pr-4 font-bold text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0' }}">
+                            Terms
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ route('contact.index') }}"
                             class="{{ request()->routeIs('contact.index')
                                 ? 'block py-2 pl-3 pr-4 font-bold text-blue-700 rounded lg:bg-transparent lg:p-0'

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TypeController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TermsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +39,13 @@ Route::prefix('contact')->group(function () {
         Route::get('/', 'index')->name('contact.index');
     });
 });
+
+Route::prefix('terms')->group(function () {
+    Route::controller(TermsController::class)->group(function () {
+        Route::get('/', 'index')->name('terms.index');
+    });
+});
+
 
 Route::prefix('about')->group(function () {
     Route::controller(AboutController::class)->group(function () {
@@ -87,6 +96,17 @@ Route::middleware('auth')->group(function () {
             Route::get('/export', 'export')->name('order.export');
 
             Route::get('/get/table', 'table')->name('order.table');
+        });
+    });
+
+    Route::prefix('article')->group(function () {
+        Route::controller(ArticleController::class)->group(function () {
+            Route::get('/', 'index')->name('article.index');
+            Route::post('/store', 'store')->name('article.store');
+            Route::post('/update', 'update')->name('article.update');
+            Route::post('/delete', 'delete')->name('article.delete');
+
+            Route::get('/get/table', 'table')->name('article.table');
         });
     });
 });

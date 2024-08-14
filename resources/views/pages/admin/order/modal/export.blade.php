@@ -52,8 +52,8 @@
         $('#form_export_order').on('submit', function(e) {
             e.preventDefault();
             const range_date_export = encodeURIComponent($('#range_date_export').val());
-            // window.open(`{{ route('order.export') }}?date=${range_date_export}`, '_blank');
-            console.log(`{{ route('order.export') }}?date=${range_date_export}`);
+
+            window.open(`{{ route('order.export') }}?date=${range_date_export}`, '_blank');
         });
     });
 </script>

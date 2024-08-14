@@ -39,7 +39,7 @@
             </div>
 
             <div class="menu-item">
-                <a class="menu-link {{ request()->routeIs('wd.*') ? "active" : "" }}" href="{{ route('product.index') }}">
+                <a class="menu-link {{ request()->routeIs('article.*') ? "active" : "" }}" href="{{ route('article.index') }}">
                     <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                     </span>
