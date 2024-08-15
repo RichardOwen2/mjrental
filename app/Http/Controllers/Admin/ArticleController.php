@@ -16,14 +16,22 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string',
+            'title' => 'required|string',
+            'content' => 'required|string',
+            'position' => 'required|integer',
+            'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:4096',
         ]);
 
-        ArticleService::store($request->name);
+        ArticleService::store(
+            $request->title,
+            $request->content,
+            $request->position,
+            $request->file('image'),
+        );
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Tipe berhasil ditambahkan',
+            'message' => 'Konten berhasil ditambahkan',
         ]);
     }
 
@@ -31,14 +39,23 @@ class ArticleController extends Controller
     {
         $request->validate([
             'id' => 'required',
-            'name' => 'required|string',
+            'title' => 'required|string',
+            'content' => 'required|string',
+            'position' => 'required|integer',
+            'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:4096',
         ]);
 
-        ArticleService::update($request->id, $request->name);
+        ArticleService::update(
+            $request->id,
+            $request->title,
+            $request->content,
+            $request->position,
+            $request->file('image'),
+        );
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Tipe berhasil diubah',
+            'message' => 'Konten berhasil diubah',
         ]);
     }
 
@@ -52,7 +69,7 @@ class ArticleController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Tipe berhasil dihapus',
+            'message' => 'Konten berhasil dihapus',
         ]);
     }
 

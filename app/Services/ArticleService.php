@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use App\Models\Article;
-use Symfony\Component\HttpKernel\Exception\HttpException;
 use Yajra\DataTables\Facades\DataTables;
 
 /**
@@ -21,19 +20,35 @@ class ArticleService
         return Article::findOrFail($id);
     }
 
-    public static function store($name)
+    public static function store($title, $content, $position, $image)
     {
+        $filename = time() . '_' . $image->getClientOriginalName();
+        $image->storeAs('public/article', $filename);
+
         return Article::create([
-            'name' => $name,
+            'title' => $title,
+            'content' => $content,
+            'position' => $position,
+            'image' => $filename,
         ]);
     }
 
-    public static function update($id, $name)
+    public static function update($id, $title, $content, $position, $image)
     {
         $article = Article::findOrFail($id);
 
+        $filename = $article->image;
+
+        if ($image) {
+            $filename = time() . '_' . $image->getClientOriginalName();
+            $image->storeAs('public/article', $filename);
+        }
+
         $article->update([
-            'name' => $name,
+            'title' => $title,
+            'content' => $content,
+            'position' => $position,
+            'image' => $filename,
         ]);
 
         return $article;
@@ -42,10 +57,6 @@ class ArticleService
     public static function delete($id)
     {
         $article = Article::findOrFail($id);
-
-        if ($article->products()->exists()) {
-            throw new HttpException(400, 'Tidak bisa menghapus tipe yang memiliki produk');
-        }
 
         $article->delete();
     }
@@ -56,11 +67,8 @@ class ArticleService
 
         return DataTables::of($query)
             ->addIndexColumn()
-            ->addColumn('product_count', function ($query) {
-                return $query->products()->count() . " Produk";
-            })
             ->addColumn('action', function ($query) {
-                return view('pages.admin.Article.menu', compact('query'));
+                return view('pages.admin.article.menu', compact('query'));
             })
             ->rawColumns(['action'])
             ->make(true);

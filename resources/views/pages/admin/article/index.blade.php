@@ -1,6 +1,8 @@
 @extends('layouts.admin.app')
 
 @section('modal')
+    @include('pages.admin.article.modal.add')
+    @include('pages.admin.article.modal.edit')
 @endsection
 
 @section('content')
@@ -11,7 +13,7 @@
             </h3>
 
             <div class="card-toolbar">
-                <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_product">
+                <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_article">
                     Tambah Konten
                 </a>
             </div>
@@ -19,7 +21,7 @@
 
         <div class="card-body pt-6">
             <div class="table-responsive" style="overflow: hidden">
-                <table class="table table-row-dashed align-middle gs-0 gy-3 my-0" id="table_product">
+                <table class="table table-row-dashed align-middle gs-0 gy-3 my-0" id="table_article">
                     <thead>
                         <tr class="fs-7 fw-bold text-gray-500 border-bottom-0">
                             <th class="w-50px text-center">NO</th>
@@ -87,9 +89,22 @@
             });
         };
 
-        const onEditArticle = (id, name) => {
-            $('#modal_edit_article [name="id"]').val(id);
-            $('#modal_edit_article [name="name"]').val(name);
+        const onEditArticle = (id, title, content, position, image) => {
+            $('#form_edit_article [name="id"]').val(id);
+            $('#form_edit_article [name="title"]').val(title);
+            $('#form_edit_article [name="content"]').val(content);
+            $('#form_edit_article [name="position"]').val(position);
+
+            const imagePreviewContainer = $('#form_edit_article #image-preview-container');
+            imagePreviewContainer.empty();
+
+            let img = $('<img>').attr('src', image).css({
+                'max-width': '500px',
+                'margin': '10px'
+            });
+
+            imagePreviewContainer.append(img);
+
             $('#modal_edit_article').modal('show');
         }
 
@@ -132,6 +147,9 @@
                         data: 'content',
                     },
                     {
+                        data: 'position',
+                    },
+                    {
                         data: 'action'
                     }
                 ],
@@ -139,7 +157,7 @@
                     "regex": true
                 },
                 columnDefs: [{
-                    targets: [0, 3],
+                    targets: [0, 4],
                     className: 'text-center',
                 }, ],
             });
