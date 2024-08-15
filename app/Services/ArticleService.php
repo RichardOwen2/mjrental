@@ -15,6 +15,11 @@ class ArticleService
         return Article::all();
     }
 
+    public static function getOrderedArticles()
+    {
+        return Article::orderBy('position', 'asc')->get();
+    }
+
     public static function getArticleById($id)
     {
         return Article::findOrFail($id);

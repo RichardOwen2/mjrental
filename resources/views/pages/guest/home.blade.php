@@ -2,19 +2,25 @@
 
 @section('content')
     <div id="default-carousel" class="relative w-full mb-0" data-carousel="slide">
-        <!-- Carousel wrapper -->
         <div class="relative overflow-hidden h-56 md:h-72">
-            <!-- Item 1 -->
-            @for ($i = 0; $i < 20; $i++)
+            @foreach($articles as $article)
                 <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                     @include('components.hero', [
-                        'image' => asset('media/background1.webp'),
-                        'title' => 'MJ RENTAL',
-                        'subtitle' => 'Rent bike bali',
-                        'content' => 'Easy, Comfortable and Affordable Motorbike Rental!',
+                        'image' => asset('storage/article/' . $article->image),
+                        'title' => $article->title,
+                        'content' => $article->content,
                     ])
                 </div>
-            @endfor
+            @endforeach
+            @foreach($articles as $article)
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    @include('components.hero', [
+                        'image' => asset('storage/article/' . $article->image),
+                        'title' => $article->title,
+                        'content' => $article->content,
+                    ])
+                </div>
+            @endforeach
         </div>
         <button type="button"
             class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
