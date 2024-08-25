@@ -1,5 +1,5 @@
 <div class="bg-white p-6 rounded-lg flex flex-col shadow">
-    <h1 class="text-2xl font-bold text-blue-800 mb-[-5px]">
+    <h1 class="text-2xl font-bold text-blue-800 mb-[-5px] ">
         {{ $product->name }}
     </h1>
 

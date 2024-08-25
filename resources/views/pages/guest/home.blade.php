@@ -2,25 +2,19 @@
 
 @section('content')
     <div id="default-carousel" class="relative w-full mb-0" data-carousel="slide">
+        <!-- Carousel wrapper -->
         <div class="relative overflow-hidden h-56 md:h-72">
-            @foreach($articles as $article)
+            <!-- Item 1 -->
+            @for ($i = 0; $i < 20; $i++)
                 <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                     @include('components.hero', [
-                        'image' => asset('storage/article/' . $article->image),
-                        'title' => $article->title,
-                        'content' => $article->content,
+                        'image' => asset('media/background1.webp'),
+                        'title' => 'MJ',
+                        'subtitle' => 'Rent scooter bali',
+                        'content' => 'Easy, Comfortable and Affordable Motorbike Rental!',
                     ])
                 </div>
-            @endforeach
-            @foreach($articles as $article)
-                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                    @include('components.hero', [
-                        'image' => asset('storage/article/' . $article->image),
-                        'title' => $article->title,
-                        'content' => $article->content,
-                    ])
-                </div>
-            @endforeach
+            @endfor
         </div>
         <button type="button"
             class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
@@ -49,6 +43,8 @@
             </span>
         </button>
     </div>
+        
+    @include('components.customer')
 
     @include('components.service')
 
@@ -68,7 +64,7 @@
                     Rent a motorbike with us and enjoy your vacation in Bali.
                 </p>
                 <a href="https://wa.me/6281367364350" target="_blank"
-                    class="text-white font-semibold bg-gradient-to-r from-cyan-500 to-blue-700 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0">
+                    class="text-white font-semibold bg-blue-800 hover:bg-blue-900 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0">
                     <i class="fa-brands fa-whatsapp me-1"></i>
                     Contact Us
                 </a>

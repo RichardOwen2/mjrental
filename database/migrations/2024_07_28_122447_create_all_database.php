@@ -65,6 +65,15 @@ return new class extends Migration
             $table->integer('position');
             $table->timestamps();
         });
+
+        Schema::create('reviews', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('description');
+            $table->text('image');
+            $table->integer('rating');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -77,5 +86,6 @@ return new class extends Migration
         Schema::dropIfExists('product_images');
         Schema::dropIfExists('orders');
         Schema::dropIfExists('articles');
+        Schema::dropIfExists('reviews');
     }
 };

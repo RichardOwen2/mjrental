@@ -9,6 +9,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\TermsController;
 use Illuminate\Support\Facades\Route;
 
@@ -107,6 +108,19 @@ Route::middleware('auth')->group(function () {
             Route::post('/delete', 'delete')->name('article.delete');
 
             Route::get('/get/table', 'table')->name('article.table');
+        });
+    });
+
+
+
+    Route::prefix('review')->group(function () {
+        Route::controller(ReviewController::class)->group(function () {
+            Route::get('/', 'index')->name('review.index');
+            Route::post('/stosre', 'store')->name('review.store');
+            Route::post('/update', 'update')->name('review.update');
+            Route::post('/delete', 'delete')->name('review.delete');
+
+            Route::get('/get/table', 'table')->name('review.table');
         });
     });
 });

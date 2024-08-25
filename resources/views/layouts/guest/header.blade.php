@@ -2,8 +2,9 @@
     <nav class="bg-white border-gray-200 py-2.5">
         <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
             <a href="{{ route('home.index') }}" class="flex items-center">
-                <img src="{{ asset('logo/logo_black.png') }}" class="h-6 mr-3 sm:h-9" alt="Logo" />
-                <span class="self-center text-xl font-semibold whitespace-nowrap">MJ RENTAL</span>
+                <img src="{{ asset('logo/logo.png') }}" class="h-14 sm:h-20 mr-3" alt="Logo" />
+
+                {{--  <span class="self-center text-xl font-semibold whitespace-nowrap">MJ RENTAL</span>  --}}
             </a>
             <div class="flex items-center lg:order-2">
                 <a href="https://wa.me/6281367364350" target="_blank"

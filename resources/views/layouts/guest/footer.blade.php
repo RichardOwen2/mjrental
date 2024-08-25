@@ -1,9 +1,9 @@
 <footer class="bg-white">
     <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
         <div class="text-center">
-            <a href="#" class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900">
-                <img src="{{ asset('logo/logo_black.png') }}" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
-                MJ RENTAL
+            <a href="#" class="flex items-center justify-center mb-2 text-2xl font-semibold text-gray-900">
+                <img src="{{ asset('logo/logo.png') }}" class="h-14 sm:h-20 " alt="Landwind Logo" />
+                {{--  MJ RENTAL  --}}
             </a>
             <span class="block text-sm text-center text-gray-500">
                 Jl. Pantai Mengening, Cemagi, Kec. Mengwi, Kabupaten Badung, Bali 80351

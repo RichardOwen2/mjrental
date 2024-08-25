@@ -19,14 +19,18 @@
                     <i class="fa-solid fa-map-marker-alt me-2 text-blue-500"></i>
                     Jl. Pantai Mengening, Cemagi, Kec. Mengwi, Kabupaten Badung, Bali 80351
                 </h3>
-                <h3 class="mt-2">
-                    <i class="fa-solid fa-phone me-2 text-blue-500"></i>
-                    +62 813-6736-4350
-                </h3>
-                <h3 class="mt-2">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-phone me-2 text-blue-500 text-xl"></i>
+                    <div class="ml-2">
+                        <div>+62 813-6736-4350</div>
+                        <div>+62 878-6307-3231</div>
+                    </div>
+                </div>
+                
+                {{--  <h3 class="mt-2">
                     <i class="fa-solid fa-envelope me-2 text-blue-500"></i>
                     lorem@gmail.com
-                </h3>
+                </h3>  --}}
             </div>
             <div id="map" style="height: 100%; min-height: 400px"></div>
         </div>

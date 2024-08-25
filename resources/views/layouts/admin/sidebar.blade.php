@@ -46,6 +46,16 @@
                     <span class="menu-title">Konten</span>
                 </a>
             </div>
+
+            
+            <div class="menu-item">
+                <a class="menu-link {{ request()->routeIs('review.*') ? "active" : "" }}" href="{{ route('review.index') }}">
+                    <span class="menu-bullet">
+                        <span class="bullet bullet-dot"></span>
+                    </span>
+                    <span class="menu-title">Review</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
