@@ -82,5 +82,4 @@
             </div>
         </div>
     </section>
-    <!-- End block -->
 @endsection

@@ -5,20 +5,26 @@
     </h2>
 
     <div class="relative overflow-hidden h-[350px]" data-aos="fade-up" data-aos-duration="700">
-        <!-- Item 1 -->
-
         @foreach ($reviews as $review)
-        
-        <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-            @include('components.rating-item', [
-                'avatar' => asset('metronic/media/avatars/300-1.jpg'), 
-                'name' => $review->title,
-                'comment' => $review->description, 
-                'rating' => $review->rating, 
-            ])
-        </div>
-    @endforeach
-    
+            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                @include('components.rating-item', [
+                    'photo' => asset('storage/review/' . $review->image),
+                    'name' => $review->title,
+                    'review' => $review->description,
+                    'rating' => $review->rating,
+                ])
+            </div>
+        @endforeach
+        @foreach ($reviews as $review)
+            <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                @include('components.rating-item', [
+                    'photo' => asset('storage/review/' . $review->image),
+                    'name' => $review->title,
+                    'review' => $review->description,
+                    'rating' => $review->rating,
+                ])
+            </div>
+        @endforeach
     </div>
     <button type="button"
         class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
