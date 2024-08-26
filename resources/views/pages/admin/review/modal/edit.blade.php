@@ -9,6 +9,7 @@
             </div>
             <form class="modal-body pt-10 pb-15 px-lg-17" id="form_edit_review">
                 <div class="px-3" style="max-height: 400px; overflow-y: auto;">
+                    <input type="text" name="id" hidden>
                     <div class="fv-row mb-3">
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span class="required">Nama</span>
