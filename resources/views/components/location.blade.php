@@ -7,7 +7,7 @@
     <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
         <!-- Row -->
         <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
-            <div class="text-gray-500 sm:text-lg">
+            <div class="text-gray-500 sm:text-lg mb-12">
                 <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900">
                     Location
                 </h2>
@@ -28,7 +28,7 @@
                     lorem@gmail.com
                 </h3>
             </div>
-            <div id="map" style="height: 100%; min-height: 400px"></div>
+            <div id="map" class="h-[400px]"></div>
         </div>
     </div>
 </section>

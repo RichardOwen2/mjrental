@@ -7,7 +7,7 @@
             </a>
             <div class="flex items-center lg:order-2">
                 <a href="https://wa.me/6281367364350" target="_blank"
-                    class="text-white font-semibold bg-gradient-to-r from-cyan-500 to-blue-700 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 focus:outline-none">
+                    class="text-white font-semibold bg-gradient-to-r from-cyan-500 to-blue-700 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 focus:outline-none max-sm:hidden">
                     <i class="fa-brands fa-whatsapp me-1"></i>
                     Contact Us
                 </a>
