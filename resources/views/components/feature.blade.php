@@ -1,11 +1,13 @@
-<section class="" data-aos="fade-up" data-aos-duration="700">
+<section class="py-12 bg-cyand-100" data-aos="fade-up" data-aos-duration="700">
     <div
-        class="items-center max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:grid-cols-4 lg:gap-16 xl:gap-24 lg:py-24 lg:px-6">
+        class="items-center max-w-screen-xl px-4 py-8 mx-auto ">
         <div class="col-span-2 mb-8">
             <p class="text-lg font-medium text-blue-600">Trusted Rent Bike</p>
             <h2 class="mt-3 mb-4 text-3xl font-extrabold tracking-tight text-gray-900 md:text-3xl">
                 Offering Reliable and Trustworthy Motorbike Rent Services</h2>
-            <p class="font-light text-gray-500 sm:text-xl">MJ RENT has quickly become the top choice for those seeking safe, comfortable, and affordable motorbike rent services. We are committed to providing the best experience to each of our customers, with a strong focus on quality and customer satisfaction.</p>
+            <p class="font-light text-gray-500 sm:text-xl">MJ RENT has quickly become the top choice for those seeking
+                safe, comfortable, and affordable motorbike rent services. We are committed to providing the best
+                experience to each of our customers, with a strong focus on quality and customer satisfaction.</p>
         </div>
         <div class="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0">
             <div>
@@ -16,7 +18,8 @@
                         clip-rule="evenodd"></path>
                 </svg>
                 <h3 class="mb-2 text-2xl font-bold">New and Well-Maintained Bikes</h3>
-                <p class="font-light text-gray-500">All of our bikes are the latest models, meticulously maintained. Each bike is regularly inspected and serviced to ensure your safety and comfort on the road.
+                <p class="font-light text-gray-500">All of our bikes are the latest models, meticulously maintained.
+                    Each bike is regularly inspected and serviced to ensure your safety and comfort on the road.
                 </p>
             </div>
             <div>
@@ -27,7 +30,8 @@
                     </path>
                 </svg>
                 <h3 class="mb-2 text-2xl font-bold">Proactive Customer Service</h3>
-                <p class="font-light text-gray-500">Our team may be young, but our passion for service is unmatched. We are always ready to assist you quickly and courteously, ensuring that all your needs are met.</p>
+                <p class="font-light text-gray-500">Our team may be young, but our passion for service is unmatched. We
+                    are always ready to assist you quickly and courteously, ensuring that all your needs are met.</p>
             </div>
             <div>
                 <svg class="w-10 h-10 mb-2 text-blue-600 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 20 20"
@@ -37,7 +41,8 @@
                         clip-rule="evenodd"></path>
                 </svg>
                 <h3 class="mb-2 text-2xl font-bold">Competitive and Transparent Pricing</h3>
-                <p class="font-light text-gray-500">We may be new to the industry, but we understand that honesty is key. We offer highly competitive prices with full transparency, with no hidden fees.</p>
+                <p class="font-light text-gray-500">We may be new to the industry, but we understand that honesty is
+                    key. We offer highly competitive prices with full transparency, with no hidden fees.</p>
             </div>
             <div>
                 <svg class="w-10 h-10 mb-2 text-blue-600 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 20 20"
@@ -47,7 +52,9 @@
                     </path>
                 </svg>
                 <h3 class="mb-2 text-2xl font-bold">Satisfied Customers from Day One</h3>
-                <p class="font-light text-gray-500">Even though we’ve just started, we’ve already received many positive reviews from satisfied customers. They trust us because we’ve been delivering our best since day one.</p>
+                <p class="font-light text-gray-500">Even though we’ve just started, we’ve already received many positive
+                    reviews from satisfied customers. They trust us because we’ve been delivering our best since day
+                    one.</p>
             </div>
         </div>
     </div>
