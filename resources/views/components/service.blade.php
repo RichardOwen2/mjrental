@@ -7,7 +7,7 @@
                     Our Services
                 </h2>
                 <p class="mb-8 font-light lg:text-xl">
-                    MJ RENTAL is a company engaged in the field of vehicle rental services, especially motorbikes. We
+                    MJ RENT is a company engaged in the field of vehicle rent services, especially motorbikes. We
                     provide the best service for you to enjoy your vacation in Bali.
                 </p>
                 <!-- List -->

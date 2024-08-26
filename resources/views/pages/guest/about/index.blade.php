@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="bg-gray-50" data-aos="fade-up" data-aos-duration="700">
-        <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">      
+        <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
             <!-- Row -->
             <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
                 <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="{{ asset('logo/logo.png') }}"
@@ -60,7 +60,7 @@
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                     clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-base font-medium leading-tight text-gray-900">Flexible Options: We offer a variety of rental packages tailored to your schedule, with options for daily, weekly, or monthly rentals.</span>
+                            <span class="text-base font-medium leading-tight text-gray-900">Flexible Options: We offer a variety of rent packages tailored to your schedule, with options for daily, weekly, or monthly rents.</span>
                         </li>
                     </ul>
                     <p class="font-light lg:text-xl">Deliver great service experiences fast - without the complexity.</p>

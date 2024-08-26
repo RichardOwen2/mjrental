@@ -54,8 +54,8 @@
             <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
                 <div class="py-5 border-b border-gray-200">
                     <p class="mb-2 text-gray-500">
-                        Vehicles must be returned on time. Late returns may result in additional rental fees. Please
-                        adhere to the return time or notify us 48 hours in advance if you wish to extend the rental.
+                        Vehicles must be returned on time. Late returns may result in additional rent fees. Please
+                        adhere to the return time or notify us 48 hours in advance if you wish to extend the rent.
                     </p>
                     <p class="mb-2 text-gray-500">
                         Report to Customer Service if you notice any damage or if the vehicle is unfit to drive. We
@@ -88,7 +88,7 @@
             <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
                 <div class="py-5 border-b border-gray-200">
                     <p class="mb-2 text-gray-500">
-                        If you offer delivery or pickup services at your rental location, delivery and pickup times
+                        If you offer delivery or pickup services at your rent location, delivery and pickup times
                         are indicative. We strive to be on time to deliver the motorcycle to you.
                     </p>
                     <p class="mb-2 text-gray-500">
@@ -118,7 +118,7 @@
             <div id="accordion-flush-body-4" class="hidden" aria-labelledby="accordion-flush-heading-4">
                 <div class="py-5 border-b border-gray-200">
                     <p class="mb-2 text-gray-500">
-                        The renter must pay all rental fees in advance upon receiving the unit. Payment can be made
+                        The renter must pay all rent fees in advance upon receiving the unit. Payment can be made
                         by cash, card, and transfer
                     </p>
                     <p class="mb-2 text-gray-500">
@@ -156,7 +156,7 @@
                     </p>
                     <p class="mb-2 text-gray-500">
                         If after an accident, our motorcycle is declared unfit to drive and the fault lies with the
-                        renter, the rental contract will be terminated immediately without a refund. The renter will
+                        renter, the rent contract will be terminated immediately without a refund. The renter will
                         be notified by email or phone regarding repair costs, and any refund, if applicable, will be
                         made promptly. Please note that opting for our motorcycle insurance will nullify this
                         condition.

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>MJRENTAL</title>
+    <title>MJRENT</title>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="{{ asset('metronic') }}/media/logos/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />

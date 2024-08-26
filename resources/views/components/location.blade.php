@@ -12,7 +12,7 @@
                     Location
                 </h2>
                 <p class="mb-8 font-light lg:text-xl">
-                    Visit our office in the MJ area of Bali by clicking on the map MJ RENTAL
+                    Visit our office in the MJ area of Bali by clicking on the map MJ RENT
                 </p>
                 <hr class="border-t py-3 border-t-gray-200 w-full">
                 <h3 class="mt-2">
@@ -26,7 +26,7 @@
                         <div>+62 878-6307-3231</div>
                     </div>
                 </div>
-                
+
                 {{--  <h3 class="mt-2">
                     <i class="fa-solid fa-envelope me-2 text-blue-500"></i>
                     lorem@gmail.com
@@ -46,7 +46,7 @@
         }).addTo(map);
 
         L.marker([-8.627569, 115.1145472]).addTo(map)
-            .bindPopup('MJ RENTAL')
+            .bindPopup('MJ RENT')
             .openPopup();
     });
 </script>

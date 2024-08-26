@@ -5,7 +5,7 @@
             <p class="text-lg font-medium text-blue-600">Trusted Rent Bike</p>
             <h2 class="mt-3 mb-4 text-3xl font-extrabold tracking-tight text-gray-900 md:text-3xl">
                 Offering Reliable and Trustworthy Motorbike Rent Services</h2>
-            <p class="font-light text-gray-500 sm:text-xl">MJ RENT has quickly become the top choice for those seeking safe, comfortable, and affordable motorbike rental services. We are committed to providing the best experience to each of our customers, with a strong focus on quality and customer satisfaction.</p>
+            <p class="font-light text-gray-500 sm:text-xl">MJ RENT has quickly become the top choice for those seeking safe, comfortable, and affordable motorbike rent services. We are committed to providing the best experience to each of our customers, with a strong focus on quality and customer satisfaction.</p>
         </div>
         <div class="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0">
             <div>

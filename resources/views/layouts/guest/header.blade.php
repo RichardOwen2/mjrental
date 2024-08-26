@@ -4,7 +4,7 @@
             <a href="{{ route('home.index') }}" class="flex items-center">
                 <img src="{{ asset('logo/logo.png') }}" class="h-14 sm:h-20 mr-3" alt="Logo" />
 
-                {{--  <span class="self-center text-xl font-semibold whitespace-nowrap">MJ RENTAL</span>  --}}
+                {{--  <span class="self-center text-xl font-semibold whitespace-nowrap">MJ RENT</span>  --}}
             </a>
             <div class="flex items-center lg:order-2">
                 <a href="https://wa.me/6281367364350" target="_blank"
