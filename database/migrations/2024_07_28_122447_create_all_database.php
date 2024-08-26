@@ -65,15 +65,6 @@ return new class extends Migration
             $table->integer('position');
             $table->timestamps();
         });
-
-        Schema::create('reviews', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->text('image');
-            $table->integer('rating');
-            $table->timestamps();
-        });
     }
 
     /**

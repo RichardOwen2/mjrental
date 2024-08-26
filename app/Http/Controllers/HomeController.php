@@ -11,15 +11,10 @@ class HomeController extends Controller
     public function index()
     {
         $articles = ArticleService::getOrderedArticles();
-        $reviews =Review::all();
+        $reviews = Review::all();
 
         return view('pages.guest.home', compact([
-            'articles','reviews'
+            'articles', 'reviews'
         ]));
-
-
     }
-
-
-
 }
