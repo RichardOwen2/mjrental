@@ -42,7 +42,7 @@ class ArticleController extends Controller
             'title' => 'required|string',
             'content' => 'required|string',
             'position' => 'required|integer',
-            'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:4096',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:4096',
         ]);
 
         ArticleService::update(

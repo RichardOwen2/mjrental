@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-dialog-centered mw-950px">
         <div class="modal-content">
             <div class="modal-header flex-stack align-items-center">
-                <div class="fs-2 fw-bold">Edit Konten</div>
+                <div class="fs-2 fw-bold">Edit Review</div>
                 <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
                     <i class="ki-outline ki-cross fs-1"></i>
                 </div>
@@ -11,7 +11,7 @@
                 <div class="px-3" style="max-height: 400px; overflow-y: auto;">
                     <div class="fv-row mb-3">
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
-                            <span class="required">Judul</span>
+                            <span class="required">Nama</span>
                         </label>
                         <input type="text" class="form-control form-control-lg form-control-solid" name="title"
                             required placeholder="" value="">
@@ -19,7 +19,7 @@
 
                     <div class="fv-row mb-3">
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
-                            <span class="required">Deskripsi</span>
+                            <span class="required">Review</span>
                         </label>
                         <input type="text" class="form-control form-control-lg form-control-solid" name="description"
                             required placeholder="" value="">
@@ -30,16 +30,16 @@
                             <span class="required">Rating</span>
                         </label>
                         <input type="number" class="form-control form-control-lg form-control-solid" name="rating"
-                            required placeholder="Enter rating" min="0" max="5" value="" >
+                            required min="0" max="5" value="">
                     </div>
-                    
-
                     <div class="fv-row mb-3">
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
-                            <span class="required">Foto</span>
+                            <span>Ganti Foto?</span>
                         </label>
                         <input type="file" class="form-control form-control-lg form-control-solid" name="image"
-                            placeholder="" value="" required>
+                            placeholder="" value="">
+                    </div>
+                    <div class="fv-row mb-3" id="image-preview-container">
                     </div>
                 </div>
 
@@ -57,7 +57,26 @@
 
 <script>
     $(document).ready(function() {
+        $('#form_edit_review [name="image"]').on('change', function() {
+            const file = event.target.files[0];
+            const imagePreviewContainer = $('#form_edit_review #image-preview-container');
 
+            // Clear previous images
+            imagePreviewContainer.empty();
+
+            let reader = new FileReader();
+
+            reader.onload = function(e) {
+                let img = $('<img>').attr('src', e.target.result).css({
+                    'max-width': '500px',
+                    'margin': '10px'
+                });
+
+                imagePreviewContainer.append(img);
+            }
+
+            reader.readAsDataURL(file);
+        });
 
         $('#form_edit_review').on('submit', function(e) {
             e.preventDefault();

@@ -9,12 +9,12 @@
     <div class="card card-flush h-md-100">
         <div class="card-header pt-7">
             <h3 class="card-title align-items-start flex-column">
-                <span class="card-label fw-bold text-gray-800">Konten</span>
+                <span class="card-label fw-bold text-gray-800">Review</span>
             </h3>
 
             <div class="card-toolbar">
                 <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_review">
-                    Tambah Konten
+                    Tambah Review
                 </a>
             </div>
         </div>
@@ -25,10 +25,9 @@
                     <thead>
                         <tr class="fs-7 fw-bold text-gray-500 border-bottom-0">
                             <th class="w-50px text-center">NO</th>
-                            <th>Judul</th>
-                            <th>Deskripsi</th>
-                            <th>Rating</th>
-                            <th>Image</th>
+                            <th>NAMA</th>
+                            <th>REVIEW</th>
+                            <th>RATING</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -43,10 +42,72 @@
 @endsection
 
 @section('script')
-<script src="{{ asset('metronic/plugins/custom/tinymce/tinymce.bundle.js') }}"></script>
     <script>
-
         let reviewTable;
+
+        const onDeleteReview = (id) => {
+            Swal.fire({
+                title: 'Delete!',
+                text: `Apakah Anda yakin ingin menghapus?`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: 'rgb(221, 107, 85)',
+                cancelButtonColor: 'gray',
+                confirmButtonText: 'Yes, Delete!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "{{ route('review.delete') }}",
+                        type: 'POST',
+                        data: {
+                            id
+                        },
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(data) {
+                            Swal.fire({
+                                title: 'Success',
+                                text: `${data.message}`,
+                                icon: 'success',
+                                confirmButtonColor: 'green',
+                            });
+
+                            reviewTable?.draw();
+                        },
+                        error: function(xhr, status, error) {
+                            const data = xhr.responseJSON;
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: data.message,
+                            });
+                        }
+                    });
+                }
+            });
+        };
+
+        const onEditReview = (id, title, description, image, rating) => {
+            $('#form_edit_review [name="id"]').val(id);
+            $('#form_edit_review [name="title"]').val(title);
+            $('#form_edit_review [name="description"]').val(description);
+            $('#form_edit_review [name="rating"]').val(rating);
+
+            const imagePreviewContainer = $('#form_edit_review #image-preview-container');
+            imagePreviewContainer.empty();
+
+            let img = $('<img>').attr('src', image).css({
+                'max-width': '500px',
+                'margin': '10px'
+            });
+
+            imagePreviewContainer.append(img);
+
+            $('#modal_edit_review').modal('show');
+        };
+
         $(document).ready(function() {
             reviewTable = $('#table_review').DataTable({
                 processing: true,
@@ -106,61 +167,5 @@
                 }, ],
             });
         });
-
-
-        //delete
-        const onDeleteReview  = (id) => {
-            Swal.fire({
-                title: 'Delete!',
-                text: `Apakah Anda yakin ingin menghapus?`,
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: 'rgb(221, 107, 85)',
-                cancelButtonColor: 'gray',
-                confirmButtonText: 'Yes, Delete!',
-                reverseButtons: true
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $.ajax({
-                        url: "{{ route('review.delete') }}",
-                        type: 'POST',
-                        data: {
-                            id
-                        },
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-                        success: function(data) {
-                            Swal.fire({
-                                title: 'Success',
-                                text: `${data.message}`,
-                                icon: 'success',
-                                confirmButtonColor: 'green',
-                            });
-
-                            reviewTable?.draw();
-                        },
-                        error: function(xhr, status, error) {
-                            const data = xhr.responseJSON;
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: data.message,
-                            });
-                        }
-                    });
-                }
-            });
-        };
-        //edit
-        const onEditReview = (id, title, description, image, rating) => {
-            $('#modal_edit_review').modal('show');
-            $('#form_edit_review [name="id"]').val(id);
-            $('#form_edit_review [name="title"]').val(title);
-            $('#form_edit_review [name="description"]').val(description);
-            $('#form_edit_review [name="image"]').val(image).trigger('change');
-            $('#form_edit_review [name="rating"]').val(rating);
-            
-        };
     </script>
 @endsection

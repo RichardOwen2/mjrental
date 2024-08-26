@@ -28,7 +28,7 @@ class ReviewService
     public static function store($title, $description, $image, $rating)
     {
         $filename = time() . '_' . $image->getClientOriginalName();
-        $image->storeAs('public/article', $filename);
+        $image->storeAs('public/review', $filename);
 
         return Review::create([
             'title' => $title,
@@ -47,7 +47,7 @@ class ReviewService
 
         if ($image) {
             $filename = time() . '_' . $image->getClientOriginalName();
-            $image->storeAs('public/article', $filename);
+            $image->storeAs('public/review', $filename);
         }
 
         $review->update([
@@ -72,7 +72,7 @@ class ReviewService
     {
         $query = Review::query();
 
-        
+
         return DataTables::of($query)
         ->addIndexColumn()
         ->addColumn('title', function ($query) {
@@ -81,21 +81,21 @@ class ReviewService
         ->addColumn('description', function ($query) {
             return $query->description;
         })
-        
+
         ->addColumn('rating', function ($query) {
             return $query->rating;
         })
 
-             
+
         ->addColumn('image', function ($query) {
             return $query->image;
         })
-        
+
         ->addColumn('action', function ($query) {
             return view('pages.admin.review.menu', compact('query'));
         })
         ->rawColumns(['action'])
         ->make(true);
-        
+
     }
 }
