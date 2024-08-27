@@ -1,11 +1,12 @@
-<div class=" bg-white border p-5" data-aos="fade-up" data-aos-duration="700">
-    <img class="rounded-t-lg " src="{{ $image }}" alt="" />
+<div class="max-w-[430px] bg-white border p-5" data-aos="fade-up" data-aos-duration="700">
+    <div class="flex justify-center items-center mt-2">
+        <img class="rounded-t-lg w-[350px] h-[350px]" src="{{ $image }}" alt="" />
+    </div>
     <div class="p-5 mt-2">
         <h5 class="mb-1 text-2xl font-bold tracking-tight text-blue-900">
             {{ $title }}
         </h5>
         <div class="flex justify-between">
-
             <div class="gap-1">
                 <div class="p-2 md:p-2 lg:p-4  border text-center">
                     <i class=" text-3xl fa-solid fa-helmet-un text-blue-700"></i>
