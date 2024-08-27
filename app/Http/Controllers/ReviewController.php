@@ -20,15 +20,15 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|string',
-            'description' => 'required|string',
+            'name' => 'required|string',
+            'review' => 'required|string',
             'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:4096',
             'rating' => 'required|integer|min:0|max:5',
         ]);
 
         ReviewService::store(
-            $request->title,
-            $request->description,
+            $request->name,
+            $request->review,
             $request->file('image'),
             $request->rating
         );
@@ -43,16 +43,16 @@ class ReviewController extends Controller
     {
         $request->validate([
             'id' => 'required',
-            'title' => 'required|string',
-            'description' => 'required|string',
+            'name' => 'required|string',
+            'review' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:4096',
             'rating' => 'required|integer|min:0|max:5',
         ]);
 
         ReviewService::update(
             $request->id,
-            $request->title,
-            $request->description,
+            $request->name,
+            $request->review,
             $request->file('image'),
             $request->rating
         );

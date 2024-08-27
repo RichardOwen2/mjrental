@@ -59,7 +59,7 @@
                 if (result.isConfirmed) {
                     $.ajax({
                         url: "{{ route('article.delete') }}",
-                        Article: 'POST',
+                        method: 'POST',
                         data: {
                             id
                         },

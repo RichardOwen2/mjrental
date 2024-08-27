@@ -15,31 +15,26 @@ class ReviewService
         return Review::all();
     }
 
-    public static function getOrderedReviews()
-    {
-        return Review::orderBy('title', 'asc')->get();
-    }
-
     public static function getReviewById($id)
     {
         return Review::findOrFail($id);
     }
 
-    public static function store($title, $description, $image, $rating)
+    public static function store($name, $review, $image, $rating)
     {
         $filename = time() . '_' . $image->getClientOriginalName();
         $image->storeAs('public/review', $filename);
 
         return Review::create([
-            'title' => $title,
-            'description' => $description,
+            'name' => $name,
+            'review' => $review,
             'image' => $filename,
             'rating' => $rating,
         ]);
     }
 
 
-    public static function update($id, $title, $description, $image, $rating)
+    public static function update($id, $name, $review, $image, $rating)
     {
         $review = Review::findOrFail($id);
 
@@ -52,8 +47,8 @@ class ReviewService
 
         $review->update([
             'id' => $id,
-            'title' => $title,
-            'description' => $description,
+            'name' => $name,
+            'review' => $review,
             'image' => $filename,
             'rating' => $rating,
         ]);
@@ -75,11 +70,11 @@ class ReviewService
 
         return DataTables::of($query)
         ->addIndexColumn()
-        ->addColumn('title', function ($query) {
-            return $query->title;
+        ->addColumn('name', function ($query) {
+            return $query->name;
         })
-        ->addColumn('description', function ($query) {
-            return $query->description;
+        ->addColumn('review', function ($query) {
+            return $query->review;
         })
 
         ->addColumn('rating', function ($query) {

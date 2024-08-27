@@ -7,7 +7,9 @@
         @include('components.customer')
     </div>
 
-    <div class="bg-white pt-60 sm:pt-44 md:pt-40 lg:pt-20 xl:pt-20">
+    <div class="bg-white pt-60 sm:pt-44 md:pt-40 lg:pt-20 xl:pt-28">
+        @include('components.home-product')
+
         @include('components.service')
     </div>
 

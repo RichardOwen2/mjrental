@@ -17,6 +17,11 @@ class ProductService
         return Product::all();
     }
 
+    public static function getProducts($amount = 10)
+    {
+        return Product::orderBy('created_at', 'desc')->take($amount)->get();
+    }
+
     public static function getProductById($id)
     {
         return Product::findOrFail($id);

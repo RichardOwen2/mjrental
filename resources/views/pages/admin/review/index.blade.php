@@ -28,7 +28,7 @@
                             <th>NAMA</th>
                             <th>REVIEW</th>
                             <th>RATING</th>
-                            <th class="text-center">Aksi</th>
+                            <th class="text-center">ACTION</th>
                         </tr>
                     </thead>
 
@@ -141,16 +141,13 @@
                         searchable: false
                     },
                     {
-                        data: 'title'
+                        data: 'name'
                     },
                     {
-                        data: 'description'
+                        data: 'review'
                     },
                     {
                         data: 'rating'
-                    },
-                    {
-                        data: 'image'
                     },
                     {
                         data: 'action'

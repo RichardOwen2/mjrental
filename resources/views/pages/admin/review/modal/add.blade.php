@@ -13,7 +13,7 @@
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span class="required">Nama</span>
                         </label>
-                        <input type="text" class="form-control form-control-lg form-control-solid" name="title"
+                        <input type="text" class="form-control form-control-lg form-control-solid" name="name"
                             required placeholder="" value="">
                     </div>
 
@@ -21,7 +21,7 @@
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span class="required">Review</span>
                         </label>
-                        <input type="text" class="form-control form-control-lg form-control-solid" name="description"
+                        <input type="text" class="form-control form-control-lg form-control-solid" name="review"
                             required placeholder="" value="">
                     </div>
 
