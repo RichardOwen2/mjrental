@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MJ RENT</title>
+    <title>MJ RENT BIKE</title>
 
     <!-- Meta SEO -->
-    <meta name="title" content="MJ RENT">
+    <meta name="title" content="MJ RENT BIKE">
     <meta name="description"
         content="MJ RENT is a company engaged in the field of vehicle rent services, especially motorbikes. We provide the best service for you to enjoy your vacation in Bali.">
 
