@@ -5,8 +5,8 @@
     <button class="btn btn-sm btn-icon btn-warning w-30px h-30px"
         onclick="onEditReview(
         '{{ $query->id }}',
-        '{{ $query->title }}',
-        '{{ $query->description }}',
+        '{{ $query->name }}',
+        '{{ $query->review }}',
         `{{ asset('public/uploads/public/review/' . $query->image) }}`,
         '{{ $query->rating }}',
     )">

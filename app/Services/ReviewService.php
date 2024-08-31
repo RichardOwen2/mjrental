@@ -36,16 +36,16 @@ class ReviewService
 
     public static function update($id, $name, $review, $image, $rating)
     {
-        $review = Review::findOrFail($id);
+        $model = Review::findOrFail($id);
 
-        $filename = $review->image;
+        $filename = $model->image;
 
         if ($image) {
             $filename = time() . '_' . $image->getClientOriginalName();
             $image->storeAs('public/review', $filename, 'uploads');
         }
 
-        $review->update([
+        $model->update([
             'id' => $id,
             'name' => $name,
             'review' => $review,

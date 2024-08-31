@@ -89,10 +89,10 @@
             });
         };
 
-        const onEditReview = (id, title, description, image, rating) => {
+        const onEditReview = (id, name, review, image, rating) => {
             $('#form_edit_review [name="id"]').val(id);
-            $('#form_edit_review [name="title"]').val(title);
-            $('#form_edit_review [name="description"]').val(description);
+            $('#form_edit_review [name="name"]').val(name);
+            $('#form_edit_review [name="review"]').val(review);
             $('#form_edit_review [name="rating"]').val(rating);
 
             const imagePreviewContainer = $('#form_edit_review #image-preview-container');

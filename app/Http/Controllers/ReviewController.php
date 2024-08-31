@@ -22,7 +22,7 @@ class ReviewController extends Controller
         $request->validate([
             'name' => 'required|string',
             'review' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:4096',
+            'image' => 'required|image|max:4096',
             'rating' => 'required|integer|min:0|max:5',
         ]);
 
@@ -45,7 +45,7 @@ class ReviewController extends Controller
             'id' => 'required',
             'name' => 'required|string',
             'review' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:4096',
+            'image' => 'nullable|image|max:4096',
             'rating' => 'required|integer|min:0|max:5',
         ]);
 
