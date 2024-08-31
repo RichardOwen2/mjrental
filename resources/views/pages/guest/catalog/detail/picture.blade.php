@@ -4,7 +4,7 @@
         <!-- Item 1 -->
         @foreach ($images as $image)
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                <img src="{{ asset('uploads/public/product/image/' . $image) }}" class="h-full w-full" alt="">
+                <img src="{{ asset('public/uploads/public/product/image/' . $image) }}" class="h-full w-full" alt="">
             </div>
         @endforeach
     </div>

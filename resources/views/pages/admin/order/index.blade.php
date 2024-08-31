@@ -189,14 +189,14 @@
 
                     data.data.forEach((image) => {
                         const img = $('<img>').attr('src',
-                            '{{ asset('uploads/public/order/attachment/') }}/' + image.attachment)
+                            '{{ asset('public/uploads/public/order/attachment/') }}/' + image.attachment)
                     .css({
                             'max-width': '300px',
                             'margin': '10px'
                         });
 
                         const a = $('<a>').attr('href',
-                                '{{ asset('uploads/public/order/attachment/') }}/' + image.attachment)
+                                '{{ asset('public/uploads/public/order/attachment/') }}/' + image.attachment)
                             .attr('target', '_blank').append(img);
                         imageContainer.append(a);
                     });

@@ -8,7 +8,7 @@
         '{{ $query->title }}',
         '{{ $query->content }}',
         '{{ $query->position }}',
-        `{{ asset('uploads/public/article/' . $query->image) }}`
+        `{{ asset('public/uploads/public/article/' . $query->image) }}`
     )">
         <span class="fa fa-pen"></span>
     </button>
