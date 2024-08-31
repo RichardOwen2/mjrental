@@ -28,7 +28,7 @@ class ArticleService
     public static function store($title, $content, $position, $image)
     {
         $filename = time() . '_' . $image->getClientOriginalName();
-        $image->storeAs('public/article', $filename);
+        $image->storeAs('public/article', $filename, 'uploads');
 
         return Article::create([
             'title' => $title,
@@ -46,7 +46,7 @@ class ArticleService
 
         if ($image) {
             $filename = time() . '_' . $image->getClientOriginalName();
-            $image->storeAs('public/article', $filename);
+            $image->storeAs('public/article', $filename, 'uploads');
         }
 
         $article->update([

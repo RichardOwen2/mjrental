@@ -4,7 +4,7 @@
         @foreach ($articles as $article)
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                 @include('components.hero-item', [
-                    'image' => asset('storage/article/' . $article->image),
+                    'image' => asset('uploads/public/article/' . $article->image),
                     'title' => $article->title,
                     'content' => $article->content,
                 ])
@@ -13,7 +13,7 @@
         @foreach ($articles as $article)
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                 @include('components.hero-item', [
-                    'image' => asset('storage/article/' . $article->image),
+                    'image' => asset('uploads/public/article/' . $article->image),
                     'title' => $article->title,
                     'content' => $article->content,
                 ])

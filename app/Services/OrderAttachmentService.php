@@ -18,7 +18,7 @@ class OrderAttachmentService
     {
         foreach ($attachments as $attachment) {
             $filename = time() . '_' . $attachment->getClientOriginalName();
-            $attachment->storeAs('public/order/attachment', $filename);
+            $attachment->storeAs('public/order/attachment', $filename, 'uploads');
 
             OrderAttachment::create([
                 'order_id' => $order_id,

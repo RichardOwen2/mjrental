@@ -38,8 +38,16 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
+            'root' => '/kocing',
             'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'uploads' => [
+            'driver' => 'local',
+            'root' => '../public/uploads',
+            'url' => env('APP_URL').'/storage/uploads',
             'visibility' => 'public',
             'throw' => false,
         ],

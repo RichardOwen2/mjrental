@@ -13,7 +13,7 @@ class ProductImageService
     {
         foreach ($images as $image) {
             $filename = time() . '_' . $image->getClientOriginalName();
-            $image->storeAs('public/product/image', $filename);
+            $image->storeAs('public/product/image', $filename, 'uploads');
 
             ProductImage::create([
                 'product_id' => $product_id,

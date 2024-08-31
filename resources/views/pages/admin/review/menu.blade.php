@@ -7,7 +7,7 @@
         '{{ $query->id }}',
         '{{ $query->title }}',
         '{{ $query->description }}',
-        `{{ asset('storage/review/' . $query->image) }}`,
+        `{{ asset('uploads/public/review/' . $query->image) }}`,
         '{{ $query->rating }}',
     )">
         <span class="fa fa-pen"></span>

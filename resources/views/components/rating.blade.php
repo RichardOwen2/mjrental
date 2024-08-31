@@ -8,7 +8,7 @@
         @foreach ($reviews as $review)
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                 @include('components.rating-item', [
-                    'photo' => asset('storage/review/' . $review->image),
+                    'photo' => asset('uploads/public/review/' . $review->image),
                     'name' => $review->name,
                     'review' => $review->review,
                     'rating' => $review->rating,
@@ -18,7 +18,7 @@
         @foreach ($reviews as $review)
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                 @include('components.rating-item', [
-                    'photo' => asset('storage/review/' . $review->image),
+                    'photo' => asset('uploads/public/review/' . $review->image),
                     'name' => $review->name,
                     'review' => $review->review,
                     'rating' => $review->rating,

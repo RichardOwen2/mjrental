@@ -30,7 +30,7 @@ class ProductService
     public static function store($type_id, $name, $price_day, $price_week, $price_month, $number, $description, $cover)
     {
         $filename = time() . '_' . $cover->getClientOriginalName();
-        $cover->storeAs('public/product/image', $filename);
+        $cover->storeAs('public/product/image', $filename, 'uploads');
 
         return Product::create([
             'type_id' => $type_id,
@@ -52,7 +52,7 @@ class ProductService
 
         if ($cover) {
             $filename = time() . '_' . $cover->getClientOriginalName();
-            $cover->storeAs('public/product/image', $filename);
+            $cover->storeAs('public/product/image', $filename, 'uploads');
         }
 
         $product->update([

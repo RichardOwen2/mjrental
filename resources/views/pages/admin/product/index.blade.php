@@ -138,7 +138,7 @@
 
                     data.data.forEach((image) => {
                         const img = $('<img>')
-                            .attr('src', '{{ asset('storage/product/image/') }}/' + image.image)
+                            .attr('src', '{{ asset('uploads/public/product/image/') }}/' + image.image)
                             .css({
                                 'max-width': '200px',
                                 'margin': '10px',
@@ -146,7 +146,7 @@
                             });
 
                         const a = $('<a>')
-                            .attr('href', '{{ asset('storage/product/image/') }}/' + image.image)
+                            .attr('href', '{{ asset('uploads/public/product/image/') }}/' + image.image)
                             .attr('target', '_blank')
                             .append(img);
 

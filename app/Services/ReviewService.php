@@ -23,7 +23,7 @@ class ReviewService
     public static function store($name, $review, $image, $rating)
     {
         $filename = time() . '_' . $image->getClientOriginalName();
-        $image->storeAs('public/review', $filename);
+        $image->storeAs('public/review', $filename, 'uploads');
 
         return Review::create([
             'name' => $name,
@@ -42,7 +42,7 @@ class ReviewService
 
         if ($image) {
             $filename = time() . '_' . $image->getClientOriginalName();
-            $image->storeAs('public/review', $filename);
+            $image->storeAs('public/review', $filename, 'uploads');
         }
 
         $review->update([
