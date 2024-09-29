@@ -63,6 +63,7 @@ class ProductService
             'price_month' => $price_month,
             'number' => $number,
             'description' => $description,
+            'cover' => $filename,
         ]);
 
         return $product;

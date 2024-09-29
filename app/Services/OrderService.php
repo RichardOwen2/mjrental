@@ -24,6 +24,11 @@ class OrderService
         return Order::findOrFail($id);
     }
 
+    public static function isProductOrdered($product_id)
+    {
+        return Order::where('product_id', $product_id)->exists();
+    }
+
     public static function getByProductId($product_id)
     {
         return Order::where('product_id', $product_id)->get();

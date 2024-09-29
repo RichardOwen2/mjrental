@@ -1,6 +1,6 @@
-<div class="max-w-[430px] bg-white border p-5" data-aos="fade-up" data-aos-duration="700">
+<div class="max-w-[430px] bg-white border p-2 md:p-5" data-aos="fade-up" data-aos-duration="700">
     <div class="flex justify-center items-center mt-2">
-        <img class="rounded-t-lg w-[350px] h-[350px]" src="{{ $image }}" alt="" />
+        <img class="rounded-t-lg w-[340px] md:w-[355px] h-[340px] md:h-[355px]" src="{{ $image }}" alt="" />
     </div>
     <div class="p-5 mt-2">
         <h5 class="mb-1 text-2xl font-bold tracking-tight text-blue-900">
@@ -65,7 +65,7 @@
         </div>
 
         <div class="flex justify-center mt-5">
-            <a href="{{ route('catalog.detail', ["id" => $id]) }}"
+            <a href="{{ route('catalog.detail', ['id' => $id]) }}"
                 class="flex justify-center items-center w-full py-2 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-cyan-500 to-blue-700">
                 <div class="flex justify-center items-center font-semibold">
                     Detail

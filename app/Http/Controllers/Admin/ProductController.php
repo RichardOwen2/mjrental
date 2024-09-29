@@ -130,7 +130,7 @@ class ProductController extends Controller
             'id' => 'required',
         ]);
 
-        if (OrderService::getByProductId($request->id)) {
+        if (OrderService::isProductOrdered($request->id)) {
             throw new HttpException(400, 'Tidak bisa menghapus produk yang sudah memiliki order');
         }
 
