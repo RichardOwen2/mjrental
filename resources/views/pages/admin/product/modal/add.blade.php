@@ -36,8 +36,19 @@
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span class="required">Nomor Plat</span>
                         </label>
-                        <input type="text" class="form-control form-control-lg form-control-solid" name="number"
-                            required placeholder="" value="">
+                        <div class="d-flex align-items-center gap-2">
+                            <input type="text" class="form-control form-control-lg form-control-solid"
+                                name="number[]" required placeholder="" value="">
+                            <div>
+                                <button class="btn btn-sm btn-success" id="btn_add_product_number" type="button">
+                                    <span class="fa fa-plus fs-2"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="product_number_container">
+                        {{--  --}}
                     </div>
 
                     <div class="fv-row mb-3">
@@ -65,8 +76,8 @@
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span>Deskripsi</span>
                         </label>
-                        <textarea type="text" class="form-control form-control-lg form-control-solid" name="description" data-control="tinymce"
-                            placeholder="" value=""></textarea>
+                        <textarea type="text" class="form-control form-control-lg form-control-solid" name="description"
+                            data-control="tinymce" placeholder="" value=""></textarea>
                     </div>
 
                     <div class="fv-row mb-3">
@@ -157,6 +168,27 @@
             }
 
             reader.readAsDataURL(file);
+        });
+
+        $('#btn_add_product_number').on('click', function() {
+            const productNumberContainer = $('#product_number_container');
+            const input = $('<input>').attr({
+                type: 'text',
+                class: 'form-control form-control-lg form-control-solid mb-3',
+                name: 'number[]',
+                placeholder: ''
+            });
+
+            const button = $('<button>').attr({
+                class: 'btn btn-sm btn-danger',
+                type: 'button'
+            }).html('<span class="fa fa-trash fs-2"></span>');
+
+            button.on('click', function() {
+                $(this).parent().remove();
+            });
+
+            productNumberContainer.append($('<div>').addClass('d-flex align-items-center gap-2').append(input).append(button));
         });
 
         $('#form_add_product').on('submit', function(e) {

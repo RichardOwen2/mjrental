@@ -1,6 +1,6 @@
 <div id="default-carousel" class="relative w-full mb-0" data-carousel="slide">
     <!-- Carousel wrapper -->
-    <div class="relative overflow-hidden h-60 md:h-72">
+    <div class="relative overflow-hidden h-[300px] md:h-[500px]">
         @foreach ($articles as $article)
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                 @include('components.hero-item', [
@@ -13,7 +13,8 @@
         @foreach ($articles as $article)
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                 @include('components.hero-item', [
-                    'image' => asset('public/uploads/public/article/' . $article->image),
+                    // 'image' => asset('public/uploads/public/article/' . $article->image),
+                    'image' => "https://www.mjrentbike.my.id/public/uploads/public/article/1727512095_jojo_bg.png",
                     'title' => $article->title,
                     'content' => $article->content,
                 ])

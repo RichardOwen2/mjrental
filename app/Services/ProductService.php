@@ -27,7 +27,7 @@ class ProductService
         return Product::findOrFail($id);
     }
 
-    public static function store($type_id, $name, $price_day, $price_week, $price_month, $number, $description, $cover)
+    public static function store($type_id, $name, $price_day, $price_week, $price_month, $description, $cover)
     {
         $filename = time() . '_' . $cover->getClientOriginalName();
         $cover->storeAs('public/product/image', $filename, 'uploads');
@@ -38,7 +38,6 @@ class ProductService
             'price_day' => $price_day,
             'price_week' => $price_week,
             'price_month' => $price_month,
-            'number' => $number,
             'description' => $description,
             'cover' => $filename,
         ]);

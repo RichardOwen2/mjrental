@@ -1,4 +1,4 @@
-<section class="bg-gray-300"
+<section class="bg-gray-300 h-[300px] md:h-[500px]"
     style="background-image: url('{{ $image }}'); background-size: cover; background-position: center;">
     <div class="grid max-w-screen-xl px-4 pt-16 md:pt-28 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-20">
         <div class="mr-auto place-self-center lg:col-span-7">

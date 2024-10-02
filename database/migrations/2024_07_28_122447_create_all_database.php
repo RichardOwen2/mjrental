@@ -25,10 +25,16 @@ return new class extends Migration
             $table->string('price_day');
             $table->string('price_week');
             $table->string('price_month');
-            $table->string('number');
             $table->text('description');
             $table->text('cover');
             // $table->boolean('archive')->default(true);
+            $table->timestamps();
+        });
+
+        Schema::create('product_numbers', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('product_id')->constrained('products');
+            $table->string('number');
             $table->timestamps();
         });
 
@@ -42,6 +48,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id')->constrained('products');
+            $table->foreignId('product_number_id')->constrained('product_numbers');
             $table->string('customer_name');
             $table->timestamp('date_in')->nullable();
             $table->timestamp('date_out')->nullable();
@@ -59,8 +66,8 @@ return new class extends Migration
 
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('content');
+            $table->string('title')->nullable();
+            $table->text('content')->nullable();
             $table->text('image');
             $table->integer('position');
             $table->timestamps();

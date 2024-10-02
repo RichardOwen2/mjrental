@@ -1,5 +1,5 @@
 <div
-    class="inset-x-0 bottom-[-100%] sm:bottom-[-170px] md:bottom-[-160px] lg:bottom-[-140px] xl:bottom-[-160px] z-40 absolute flex justify-center items-center mx-4">
+    class="inset-x-0 bottom-[-210px] sm:bottom-[-100px] md:bottom-[-160px] lg:bottom-[-140px] xl:bottom-[-160px] z-40 absolute flex justify-center items-center mx-4">
     <div class="flex flex-col md:flex-row gap-2 bg-white shadow-md rounded-lg p-4 md:p-8 lg:p-12 max-w-screen-xl justify-center items-center">
         <!-- Left Side: Text Content -->
         <div class="w-full pr-0 md:pr-4">
