@@ -39,7 +39,6 @@ class ProductController extends Controller
             'price_day' => 'required|numeric',
             'price_month' => 'required|numeric',
             'price_week' => 'required|numeric',
-            'number' => 'required|array',
             'description' => 'required|string',
             'cover' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
             'image' => 'nullable|array',
@@ -60,10 +59,6 @@ class ProductController extends Controller
             $request->description,
             $request->file('cover')
         );
-
-        foreach ($request->number as $number) {
-            ProductNumberService::store($product->id, $number);
-        }
 
         if ($request->hasFile('image')) {
             ProductImageService::store($product->id, $request->file('image'));
@@ -86,7 +81,6 @@ class ProductController extends Controller
             'price_day' => 'required|numeric',
             'price_month' => 'required|numeric',
             'price_week' => 'required|numeric',
-            'number' => 'required',
             'description' => 'required|string',
             'cover' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ], [
@@ -101,7 +95,6 @@ class ProductController extends Controller
             $request->price_day,
             $request->price_week,
             $request->price_month,
-            $request->number,
             $request->description,
             $request->file('cover')
         );

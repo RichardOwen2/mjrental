@@ -18,4 +18,7 @@
     <button class="btn btn-sm btn-icon btn-primary w-30px h-30px" onclick="onViewImage('{{ $query->id }}')">
         <span class="fa fa-image"></span>
     </button>
+    <a class="btn btn-sm btn-icon btn-info w-30px h-30px" href="{{ route('product.number.index', ['id' => $query->id]) }}">
+        <span class="fa fa-id-card"></span>
+    </a>
 </div>

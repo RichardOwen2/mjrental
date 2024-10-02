@@ -34,25 +34,6 @@
 
                     <div class="fv-row mb-3">
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
-                            <span class="required">Nomor Plat</span>
-                        </label>
-                        <div class="d-flex align-items-center gap-2">
-                            <input type="text" class="form-control form-control-lg form-control-solid"
-                                name="number[]" required placeholder="" value="">
-                            <div>
-                                <button class="btn btn-sm btn-success" id="btn_add_product_number" type="button">
-                                    <span class="fa fa-plus fs-2"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="product_number_container">
-                        {{--  --}}
-                    </div>
-
-                    <div class="fv-row mb-3">
-                        <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span class="required">Harga</span>
                         </label>
                         <div class="input-group mb-3">
@@ -74,10 +55,10 @@
 
                     <div class="fv-row mb-3">
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
-                            <span>Deskripsi</span>
+                            <span class="required">Deskripsi</span>
                         </label>
                         <textarea type="text" class="form-control form-control-lg form-control-solid" name="description"
-                            data-control="tinymce" placeholder="" value=""></textarea>
+                            data-control="tinymce" placeholder="" value="" required></textarea>
                     </div>
 
                     <div class="fv-row mb-3">

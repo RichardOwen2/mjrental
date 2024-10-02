@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductDetailController;
 use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
@@ -72,6 +73,12 @@ Route::middleware('auth')->group(function () {
             Route::post('/delete/image', 'deleteImage')->name('product.delete.image');
 
             Route::get('/get/table', 'table')->name('product.table');
+        });
+
+        Route::prefix('{id}')->group(function () {
+            Route::controller(ProductDetailController::class)->group(function () {
+                Route::get('/', 'index')->name('product.number.index');
+            });
         });
     });
 

@@ -43,7 +43,7 @@ class ProductService
         ]);
     }
 
-    public static function update($id, $type_id, $name, $price_day, $price_week, $price_month, $number, $description, $cover)
+    public static function update($id, $type_id, $name, $price_day, $price_week, $price_month, $description, $cover)
     {
         $product = Product::findOrFail($id);
 
@@ -60,7 +60,6 @@ class ProductService
             'price_day' => $price_day,
             'price_week' => $price_week,
             'price_month' => $price_month,
-            'number' => $number,
             'description' => $description,
             'cover' => $filename,
         ]);
@@ -87,6 +86,9 @@ class ProductService
             ->addIndexColumn()
             ->addColumn('type_name', function ($query) {
                 return $query->type->name;
+            })
+            ->addColumn('count', function ($query) {
+                return $query->numbers()->count() . " unit";
             })
             ->addColumn('price', function ($query) {
                 return "Rp " . Helpers::numberFormat($query->price_day) . " / Rp " . Helpers::numberFormat($query->price_week) . " / Rp " . Helpers::numberFormat($query->price_month);

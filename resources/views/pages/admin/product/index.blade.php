@@ -28,9 +28,8 @@
                             <th class="w-50px text-center">NO</th>
                             <th>NAMA</th>
                             <th>TIPE</th>
-                            <th>PLAT</th>
                             <th>HARGA</th>
-                            {{-- <th>DESKRIPSI</th> --}}
+                            <th>JUMLAH</th>
                             <th class="text-center">ACTION</th>
                         </tr>
                     </thead>
@@ -263,14 +262,11 @@
                         data: 'type_name',
                     },
                     {
-                        data: 'number',
-                    },
-                    {
                         data: 'price',
                     },
-                    // {
-                    //     data: 'description',
-                    // },
+                    {
+                        data: 'count',
+                    },
                     {
                         data: 'action'
                     }
