@@ -88,15 +88,19 @@ class OrderService
         );
     }
 
-    public static function getDataTable($status = null)
+    public static function getDataTable($status = null, $product_id = null)
     {
         $query = Order::with([
             'product',
             'product.type',
         ]);
 
-        if ($status !== "All") {
-            $query->where('status', $status);
+        if ($status && $status !== "All") {
+            $query = $query->where('status', $status);
+        }
+
+        if ($product_id) {
+            $query = $query->where('product_id', $product_id);
         }
 
         return DataTables::of($query)
@@ -108,7 +112,7 @@ class OrderService
                 return $query->product->type->name;
             })
             ->addColumn('product_number', function ($query) {
-                return $query->product->number;
+                return $query->productNumber->number;
             })
             ->addColumn('status', function ($query) {
                 $status = $query->status;

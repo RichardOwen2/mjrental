@@ -77,7 +77,13 @@ Route::middleware('auth')->group(function () {
 
         Route::prefix('{id}')->group(function () {
             Route::controller(ProductDetailController::class)->group(function () {
-                Route::get('/', 'index')->name('product.number.index');
+                Route::get('/', 'index')->name('product.detail.index');
+                Route::post('/store/number', 'storeNumber')->name('product.detail.store.number');
+                Route::post('/update/number', 'updateNumber')->name('product.detail.update.number');
+                Route::post('/delete/number', 'deleteNumber')->name('product.detail.delete.number');
+
+                Route::get('/get/table/number', 'numberTable')->name('product.detail.number');
+                Route::get('/get/table/order', 'orderTable')->name('product.detail.order');
             });
         });
     });
