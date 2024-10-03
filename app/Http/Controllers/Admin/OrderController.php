@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Constants;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductNumber;
 use App\Services\OrderAttachmentService;
 use App\Services\OrderService;
 use Carbon\Carbon;
@@ -15,7 +16,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $products = Product::with('type')->get();
+        $products = ProductNumber::with('product.type')->get();
 
         return view('pages.admin.order.index', compact('products'));
     }
@@ -33,7 +34,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'product_id' => 'required|exists:products,id',
+            'product_number_id' => 'required|exists:product_numbers,id',
             'customer_name' => 'required|string',
             'date_in' => 'nullable|date',
             'date_out' => 'nullable|date',
@@ -50,7 +51,7 @@ class OrderController extends Controller
         DB::beginTransaction();
 
         $order = OrderService::store(
-            $request->product_id,
+            $request->product_number_id,
             $request->customer_name,
             $request->date_in,
             $request->date_out,
@@ -58,7 +59,7 @@ class OrderController extends Controller
             $request->status
         );
 
-        OrderAttachmentService::store($order->id, $request->attachments);
+        OrderAttachmentService::store($order->id, $request->attachments ?? []);
 
         DB::commit();
 
@@ -72,7 +73,7 @@ class OrderController extends Controller
     {
         $request->validate([
             'id' => 'required|exists:orders,id',
-            'product_id' => 'required|exists:products,id',
+            'product_number_id' => 'required|exists:product_numbers,id',
             'customer_name' => 'required|string',
             'date_in' => 'nullable|date',
             'date_out' => 'nullable|date',

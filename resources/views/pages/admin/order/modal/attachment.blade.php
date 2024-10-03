@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-dialog-centered mw-950px">
         <div class="modal-content">
             <div class="modal-header flex-stack align-items-center">
-                <div class="fs-2 fw-bold">Edit Order</div>
+                <div class="fs-2 fw-bold">Attachment</div>
                 <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
                     <i class="ki-outline ki-cross fs-1"></i>
                 </div>

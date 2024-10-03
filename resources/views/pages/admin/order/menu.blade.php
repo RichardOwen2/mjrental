@@ -5,7 +5,7 @@
     <button class="btn btn-sm btn-icon btn-warning w-30px h-30px"
         onclick="onEditOrder(
         '{{ $query->id }}',
-        '{{ $query->product_id }}',
+        '{{ $query->product_number_id }}',
         '{{ $query->customer_name }}',
         '{{ $query->date_in }}',
         '{{ $query->date_out }}',

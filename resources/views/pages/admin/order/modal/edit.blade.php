@@ -15,12 +15,13 @@
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span class="required">Produk</span>
                         </label>
-                        <select name="product_id" class="form-select form-select-solid" data-control="select2"
-                            data-hide-search="true" data-placeholder="">
+                        <select name="product_number_id" class="form-select form-select-solid" data-control="select2"
+                            data-placeholder="" required data-dropdown-parent="#modal_edit_order">
                             <option selected hidden disabled>Pilih Dulu</option>
                             @foreach ($products as $product)
                                 <option value="{{ $product->id }}">
-                                    {{ $product->type->name }} - {{ $product->number }}
+                                    [{{ $product->number }}] {{ $product->product->name }} -
+                                    {{ $product->product->type->name }}
                                 </option>
                             @endforeach
                         </select>
@@ -30,24 +31,24 @@
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span class="required">Nama Customer</span>
                         </label>
-                        <input type="text" class="form-control form-control-lg form-control-solid" name="customer_name"
-                            required placeholder="" value="">
+                        <input type="text" class="form-control form-control-lg form-control-solid"
+                            name="customer_name" required placeholder="" value="">
                     </div>
 
                     <div class="fv-row mb-3">
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span>Date In</span>
                         </label>
-                        <input type="datetime-local" class="form-control form-control-lg form-control-solid" name="date_in"
-                            placeholder="" value="">
+                        <input type="datetime-local" class="form-control form-control-lg form-control-solid"
+                            name="date_in" placeholder="" value="">
                     </div>
 
                     <div class="fv-row mb-3">
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
                             <span>Date Out</span>
                         </label>
-                        <input type="datetime-local" class="form-control form-control-lg form-control-solid" name="date_out"
-                            placeholder="" value="">
+                        <input type="datetime-local" class="form-control form-control-lg form-control-solid"
+                            name="date_out" placeholder="" value="">
                     </div>
 
                     <div class="fv-row mb-3">

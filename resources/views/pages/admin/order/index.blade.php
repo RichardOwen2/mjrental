@@ -187,6 +187,11 @@
                     const imageContainer = $('#modal_attachment_order #attachment_list');
                     imageContainer.empty();
 
+                    if (data.data.length == 0) {
+                        imageContainer.append('<div class="text-center fw-bold fs-3">No Attachment</div>');
+                        return;
+                    }
+
                     data.data.forEach((image) => {
                         const img = $('<img>').attr('src',
                             '{{ asset('public/uploads/public/order/attachment/') }}/' + image.attachment)
@@ -208,10 +213,10 @@
             });
         }
 
-        const onEditOrder = (id, product_id, customer_name, date_in, date_out, description, status) => {
+        const onEditOrder = (id, product_number_id, customer_name, date_in, date_out, description, status) => {
             $('#modal_edit_order').modal('show');
             $('#form_edit_order [name="id"]').val(id);
-            $('#form_edit_order [name="product_id"]').val(product_id).trigger('change');
+            $('#form_edit_order [name="product_number_id"]').val(product_number_id).trigger('change');
             $('#form_edit_order [name="customer_name"]').val(customer_name);
             $('#form_edit_order [name="date_in"]').val(date_in);
             $('#form_edit_order [name="date_out"]').val(date_out);

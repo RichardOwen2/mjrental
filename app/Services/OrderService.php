@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Exports\OrderExport;
 use App\Models\Order;
+use App\Models\ProductNumber;
 use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -34,10 +35,13 @@ class OrderService
         return Order::where('product_id', $product_id)->get();
     }
 
-    public static function store($product_id, $customer_name, $date_in, $date_out, $description, $status)
+    public static function store($product_number_id, $customer_name, $date_in, $date_out, $description, $status)
     {
+        $product = ProductNumber::findOrFail($product_number_id);
+
         return Order::create([
-            'product_id' => $product_id,
+            'product_number_id' => $product_number_id,
+            'product_id' => $product->product_id,
             'customer_name' => $customer_name,
             'date_in' => $date_in,
             'date_out' => $date_out,
@@ -46,12 +50,19 @@ class OrderService
         ]);
     }
 
-    public static function update($id, $product_id, $customer_name, $date_in, $date_out, $description, $status)
+    public static function update($id, $product_number_id, $customer_name, $date_in, $date_out, $description, $status)
     {
         $order = Order::findOrFail($id);
 
+        $product = null;
+
+        if ($product_number_id) {
+            $product = ProductNumber::findOrFail($product_number_id);
+        }
+
         $order->update([
-            'product_id' => $product_id ?? $order->product_id,
+            'product_number_id' => $product ? $product->id : $order->product_number_id,
+            'product_id' => $product ? $product->product_id : $order->product_id,
             'customer_name' => $customer_name ?? $order->customer_name,
             'date_in' => $date_in ?? $order->date_in,
             'date_out' => $date_out ?? $order->date_out,
@@ -102,6 +113,8 @@ class OrderService
         if ($product_id) {
             $query = $query->where('product_id', $product_id);
         }
+
+        $query = $query->orderBy('created_at', 'desc');
 
         return DataTables::of($query)
             ->addIndexColumn()

@@ -131,8 +131,12 @@ class ProductController extends Controller
             throw new HttpException(400, 'Tidak bisa menghapus produk yang sudah memiliki order');
         }
 
+        DB::beginTransaction();
+
         ProductImageService::deleteByProductId($request->id);
         ProductService::delete($request->id);
+
+        DB::commit();
 
         return response()->json([
             'status' => 'success',

@@ -93,7 +93,7 @@ class ProductService
                 return $query->type->name;
             })
             ->addColumn('count', function ($query) {
-                return $query->numbers()->count() . " unit";
+                return $query->numbers()->count() . " PLAT";
             })
             ->addColumn('price', function ($query) {
                 return "Rp " . Helpers::numberFormat($query->price_day) . " / Rp " . Helpers::numberFormat($query->price_week) . " / Rp " . Helpers::numberFormat($query->price_month);

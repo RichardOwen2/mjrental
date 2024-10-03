@@ -145,7 +145,7 @@
                                 confirmButtonColor: 'green',
                             });
 
-                            productTable?.draw();
+                            numberTable?.draw();
                         },
                         error: function(xhr, status, error) {
                             const data = xhr.responseJSON;
@@ -224,7 +224,7 @@
                     "regex": true
                 },
                 columnDefs: [{
-                    targets: [0, 8],
+                    targets: [0, 6],
                     className: 'text-center',
                 }, ],
             });
