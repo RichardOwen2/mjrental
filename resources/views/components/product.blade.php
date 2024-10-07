@@ -1,4 +1,4 @@
-<div class="max-w-[430px] bg-white border p-2 md:p-5" data-aos="fade-up" data-aos-duration="700">
+<div class="max-w-[430px] bg-white border p-2 md:p-5" data-category="{{ $type }}" data-aos="fade-up" data-aos-duration="700">
     <div class="flex justify-center items-center mt-2">
         <img class="rounded-t-lg w-[340px] md:w-[355px] h-[340px] md:h-[355px]" src="{{ $image }}" alt="" />
     </div>
@@ -68,7 +68,7 @@
             <a href="{{ route('catalog.detail', ['id' => $id]) }}"
                 class="flex justify-center items-center w-full py-2 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-cyan-500 to-blue-700">
                 <div class="flex justify-center items-center font-semibold">
-                    Detail
+                    More
                     {{--  <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

@@ -4,15 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Services\ProductImageService;
 use App\Services\ProductService;
+use App\Services\TypeService;
 use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = ProductService::getAllProducts();
+        if ($request->type != "") {
+            $type = TypeService::getTypeByName($request->type);
+            $products = ProductService::getProductsByType($type->id);
+        } else {
+            $products = ProductService::getAllProducts();
+        }
 
-        return view('pages.guest.catalog.index', compact('products'));
+        $types = TypeService::getAllTypes();
+
+        return view('pages.guest.catalog.index', compact([
+            'products', 'types'
+        ]));
     }
 
     public function detail($id)

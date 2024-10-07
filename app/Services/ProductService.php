@@ -32,6 +32,11 @@ class ProductService
         return Product::where('id', $id)->exists();
     }
 
+    public static function getProductsByType($type)
+    {
+        return Product::where('type_id', $type)->get();
+    }
+
     public static function store($type_id, $name, $price_day, $price_week, $price_month, $description, $cover)
     {
         $filename = time() . '_' . $cover->getClientOriginalName();

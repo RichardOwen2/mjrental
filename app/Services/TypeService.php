@@ -21,6 +21,11 @@ class TypeService
         return Type::findOrFail($id);
     }
 
+    public static function getTypeByName($name)
+    {
+        return Type::where('name', $name)->first();
+    }
+
     public static function store($name)
     {
         return Type::create([

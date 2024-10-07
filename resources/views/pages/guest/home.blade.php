@@ -1,13 +1,13 @@
 @extends('layouts.guest.app')
 
 @section('content')
-    <div class="relative">
+    {{-- <div class="relative"> --}}
         @include('components.hero')
 
         @include('components.customer')
-    </div>
+    {{-- </div> --}}
 
-    <div class="bg-white pt-60 sm:pt-44 md:pt-40 lg:pt-20 xl:pt-28">
+    <div class="bg-white ">
         @include('components.home-product')
 
         @include('components.service')

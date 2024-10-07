@@ -13,8 +13,7 @@
         @foreach ($articles as $article)
             <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                 @include('components.hero-item', [
-                    // 'image' => asset('public/uploads/public/article/' . $article->image),
-                    'image' => "https://www.mjrentbike.my.id/public/uploads/public/article/1727512095_jojo_bg.png",
+                    'image' => asset('public/uploads/public/article/' . $article->image),
                     'title' => $article->title,
                     'content' => $article->content,
                 ])

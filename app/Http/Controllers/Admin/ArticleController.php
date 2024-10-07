@@ -16,8 +16,8 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|string',
-            'content' => 'required|string',
+            'title' => 'nullable|string',
+            'content' => 'nullable|string',
             'position' => 'required|integer',
             'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:4096',
         ]);
@@ -39,8 +39,8 @@ class ArticleController extends Controller
     {
         $request->validate([
             'id' => 'required',
-            'title' => 'required|string',
-            'content' => 'required|string',
+            'title' => 'nullable|string',
+            'content' => 'nullable|string',
             'position' => 'required|integer',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:4096',
         ]);

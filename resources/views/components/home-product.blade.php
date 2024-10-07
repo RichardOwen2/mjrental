@@ -7,6 +7,7 @@
             @foreach ($products as $product)
                 @include('components.product', [
                     'id' => $product->id,
+                    'type' => "",
                     'image' => asset('public/uploads/public/product/image/' . $product->cover),
                     'title' => $product->name,
                     'price_day' => \App\Helpers::numberFormat($product->price_day),

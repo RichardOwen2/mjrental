@@ -12,18 +12,18 @@
                     <input type="text" name="id" hidden>
                     <div class="fv-row mb-3">
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
-                            <span class="required">Judul</span>
+                            <span class="">Judul</span>
                         </label>
                         <input type="text" class="form-control form-control-lg form-control-solid" name="title"
-                            required placeholder="" value="">
+                            placeholder="" value="">
                     </div>
 
                     <div class="fv-row mb-3">
                         <label class="d-flex align-items-center fs-5 fw-semibold mb-2">
-                            <span class="required">Sub Judul</span>
+                            <span class="">Sub Judul</span>
                         </label>
                         <input type="text" class="form-control form-control-lg form-control-solid" name="content"
-                            required placeholder="" value="">
+                            placeholder="" value="">
                     </div>
 
                     <div class="fv-row mb-3">
