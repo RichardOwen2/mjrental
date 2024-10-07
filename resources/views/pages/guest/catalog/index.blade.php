@@ -10,7 +10,7 @@
             <div class="flex flex-col space-y-2 w-full max-w-md">
                 <label for="product-type" class="text-lg font-semibold text-gray-800">Pilih Tipe Produk</label>
                 <select id="product-type" class="select2 w-full">
-                    <option value="">Pilih Tipe Produk</option>
+                    <option value="*">Semua Tipe</option>
                     @foreach ($types as $type)
                     <option value="{{ $type->name }}">{{ $type->name }}</option>
                     @endforeach
@@ -51,11 +51,11 @@
 
     <script>
         const url = new URL(window.location.href);
-        const type = url.searchParams.get('type');
+        const type = url.searchParams.get('type') ?? '*';
 
         $(document).ready(function() {
             $('#product-type').select2({
-                placeholder: 'Pilih Tipe Produk',
+                placeholder: 'Semua Tipe',
                 width: 'resolve'
             });
 

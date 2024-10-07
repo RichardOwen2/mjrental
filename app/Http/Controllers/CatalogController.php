@@ -11,7 +11,7 @@ class CatalogController extends Controller
 {
     public function index(Request $request)
     {
-        if ($request->type != "") {
+        if ($request->type != "" && $request->type != '*') {
             $type = TypeService::getTypeByName($request->type);
             $products = ProductService::getProductsByType($type->id);
         } else {
